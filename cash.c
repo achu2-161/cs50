@@ -23,7 +23,7 @@ int main(void)
     while (change < 0);
     
     //convert into cents
-    quarter = round(change * 100);
+    quarter = change * 100;
     
     //calculate how many quarters from change
     nquarter = round(quarter / 25);
