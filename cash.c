@@ -44,7 +44,7 @@ int main(void)
     npenny = quarter - nquarter - ndime - nnickel;
     
     //add all denominations
-    ncoins = nquarter + ndime + nnickel + npenny;
+    ncoins = quarter - (nquarter * 25) + (ndime * 10) + (nnickel * 5) + npenny;
 
     printf("%.2f\n", change);
 
