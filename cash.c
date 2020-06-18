@@ -2,43 +2,54 @@
 #include <cs50.h>
 #include <math.h>
 
-int main (void)
+int main(void)
 
 {
+    //declare variables
+    
+    float change;
 
-float change;
-
- int quarter, nquarter, rquarter, dime, ndime, rdime, nickel, nnickel, rnickel, ncoins, npenny;
+    int quarter, nquarter, rquarter, dime, ndime, rdime, nickel, nnickel, rnickel, ncoins, npenny;
 
 
-
-     do
+    //operators are located inside do-while loops to so user input can be used to calculate
+    do
     {
+        
         change = get_float("how much change is owed? ");
-
 
     }
 
     while (change < 0);
-
-          quarter = change*100;
-   nquarter = floor(quarter/25);
-   rquarter = quarter%25;
-
-   ndime = floor(rquarter/10);
-   rdime = rquarter%10;
-
-    nnickel = floor(rdime/5);
-    rnickel = rdime%5;
     
-    npenny = floor(rnickel%1);
+    //convert into cents
+    quarter = change * 100;
+    
+    //calculate how many quarters from change
+    nquarter = floor(quarter / 25);
+    //calculate how many cents remaining after quarters subtracted
+    rquarter = quarter % 25;
 
+    //calculate how many dimes after quarters
+    ndime = floor(rquarter / 10);
+    //calculate how many cents remaining after dimes subtracted
+    rdime = rquarter % 10;
+
+    //calculate how many nickels after quarters
+    nnickel = floor(rdime / 5);
+    //calculate how many cents remaining after nickels subtracted
+    rnickel = rdime % 5;
+    
+    //calculate how many pennies after nickels
+    npenny = floor(rnickel % 1);
+    
+    //add all denominations
     ncoins = nquarter + ndime + nnickel + npenny;
 
-          printf("%.2f\n", change);
+    printf("%.2f\n", change);
 
 
-     printf("number of coins: %i\n", ncoins);
+    printf("number of coins: %i\n", ncoins);
 
 }
 
