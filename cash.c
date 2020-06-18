@@ -26,17 +26,17 @@ int main(void)
     quarter = change * 100;
     
     //calculate how many quarters from change
-    nquarter = floor(quarter / 25);
+    nquarter = round(quarter / 25);
     //calculate how many cents remaining after quarters subtracted
     rquarter = round(quarter % 25);
 
     //calculate how many dimes after quarters
-    ndime = floor(rquarter / 10);
+    ndime = round(rquarter / 10);
     //calculate how many cents remaining after dimes subtracted
     rdime = round(rquarter % 10);
 
     //calculate how many nickels after quarters
-    nnickel = floor(rdime / 5);
+    nnickel = round(rdime / 5);
     //calculate how many cents remaining after nickels subtracted
     rnickel = round(rdime % 5);
     
