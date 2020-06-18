@@ -23,7 +23,7 @@ int main(void)
     while (change < 0);
     
     //convert into cents
-    quarter = change * 100;
+    quarter = round(change * 100);
     
     //calculate how many quarters from change
     nquarter = round(quarter / 25);
@@ -48,7 +48,7 @@ int main(void)
 
     printf("%.2f\n", change);
 
-
+    printf("%i\n", quarter);
     printf("number of coins: %i\n", ncoins);
 
 }
