@@ -41,10 +41,10 @@ int main(void)
     rnickel = rdime % 5;
     
     //calculate how many pennies after nickels
-    npenny = quarter - nquarter - ndime - nnickel;
+    npenny = quarter - (nquarter * 25) - (ndime * 10) - (nnickel * 5);
     
     //add all denominations
-    ncoins = quarter - (nquarter * 25) + (ndime * 10) + (nnickel * 5) + npenny;
+    ncoins = nquarter + ndime + nnickel + npenny;
 
     printf("%.2f\n", change);
 
