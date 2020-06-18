@@ -41,7 +41,7 @@ int main(void)
     rnickel = rdime % 5;
     
     //calculate how many pennies after nickels
-    npenny = round(rnickel);
+    npenny = quarter - nquarter - ndime - nnickel;
     
     //add all denominations
     ncoins = nquarter + ndime + nnickel + npenny;
