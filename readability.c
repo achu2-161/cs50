@@ -15,17 +15,17 @@ int main(void)
     //printf("length of string is %i\n", characters);
 
 
-    int i;       //i is the ith character in the string s
-    int j = 0;   //j is the jth space in the string s
-    int jj = 0;  //jj is the number of punctuations in the string s
-    int k = 0;   //k is the kth end of sentence of string s
-    int letters = 0;
+    int i;       //i is the number of characters in the string s - i increases everytime the for loop loops until i = characters
+    int j = 0;   //j is the number is spaces in the string s - j increases everytime the for loops finds a space until i = character
+    int jj = 0;  //jj is the number of punctuations in the string s - not needed after all
+    int k = 0;   //k is the number of sentences in the string s - k increases everytime the for loop finds . ! or ? until i = character
+    int l = 0;   //l is the number of letters in string s - l increases everytime loops finds a letter (bu using ASCII codes)
 
-    for (i = 0; i < characters; i++)
+    for (i = 0; i < characters; i++)   //i++ is used to go through each character of the string one by one
 
     {
 
-        if (s[i] == ' ')
+        if (s[i] == ' ')   //s[i] is used to index individual characters within a string
 
         {
 
@@ -44,7 +44,7 @@ int main(void)
 
         {
 
-            letters++;
+            l++;
 
         }
 
@@ -52,9 +52,9 @@ int main(void)
 
 
 
-    //int letters = characters - jj - j;
+    //int letters = characters - jj - j; - this was flawed as it was difficult to capture all punctiations so jj was inaccurate
     int words = j + 1;
-
+    int letters = l
 
     for (i = 0; i < characters; i++)
 
@@ -68,7 +68,7 @@ int main(void)
 
     }
 
-
+    int sentences = k
 
 
     //printf("Number of letters is %i\n", letters);   //print number of letters
@@ -84,8 +84,8 @@ int main(void)
     // L = number of letters / 100 words
     // S = number of sentences / 100 words
 
-    float L = (100 * ((float) letters / (float) words));
-    float S = (100 * ((float) k / (float) words));
+    float L = (100 * ((float) letters / (float) words));   //integers previously declared are cast as floats to preserve precision of division
+    float S = (100 * ((float) sentences / (float) words));
 
     float Index = ((0.0588 * L) - (0.296 * S) - 15.8);
 
