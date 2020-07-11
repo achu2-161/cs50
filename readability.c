@@ -51,7 +51,7 @@ int main(void)
     
     
     
-        int letters = characters - jj;
+        int letters = characters - jj - j;
         int words = j+1;
 
 
