@@ -12,7 +12,7 @@ int main(void)
 
     int characters = strlen (s);
 
-    printf("length of string is %i\n", characters);
+    //printf("length of string is %i\n", characters);
 
 
     int i;       //i is the ith character in the string s
@@ -51,11 +51,11 @@ int main(void)
 
 
 
-    printf("Number of letters is %i\n", letters);   //print number of letters
+    //printf("Number of letters is %i\n", letters);   //print number of letters
 
-    printf("Number of words is %i\n", words);   //print number of words
+    //printf("Number of words is %i\n", words);   //print number of words
 
-    printf("Number of sentences is %i\n", k);   //print number of sentences
+    //printf("Number of sentences is %i\n", k);   //print number of sentences
 
 
 
@@ -70,9 +70,9 @@ int main(void)
     float Index = ((0.0588 * L) - (0.296 * S) - 15.8);
     
     
-    printf("L: %.4f\n", L);
-    printf("S: %.4f\n", S);
-    printf("Index: %.4f\n", Index);
+    //printf("L: %.4f\n", L);
+    //printf("S: %.4f\n", S);
+    //printf("Index: %.4f\n", Index);
     
     if (Index < 1)
 
