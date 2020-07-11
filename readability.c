@@ -19,7 +19,7 @@ int main(void)
     int j = 0;   //j is the jth space in the string s
     int jj = 0;  //jj is the number of punctuations in the string s
     int k = 0;   //k is the kth end of sentence of string s
-    int words = 0;
+    int letters = 0;
 
     for(i = 0; i < characters; i++)
 
@@ -40,7 +40,7 @@ int main(void)
 
     {
 
-        if((s[i] > (int) 64) && (s[i] < (int) 90)) || ((s[i] > (int) 96) && (s[i] < (int) 123))
+        if(((s[i] > (int) 64) && (s[i] < (int) 90)) || ((s[i] > (int) 96) && (s[i] < (int) 123)))
 
         {
 
