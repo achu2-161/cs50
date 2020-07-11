@@ -54,7 +54,7 @@ int main(void)
 
     //int letters = characters - jj - j; - this was flawed as it was difficult to capture all punctiations so jj was inaccurate
     int words = j + 1;
-    int letters = l
+    int letters = l;
 
     for (i = 0; i < characters; i++)
 
@@ -68,7 +68,7 @@ int main(void)
 
     }
 
-    int sentences = k
+    int sentences = k;
 
 
     //printf("Number of letters is %i\n", letters);   //print number of letters
