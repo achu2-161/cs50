@@ -17,6 +17,7 @@ int main(void)
 
     int i;       //i is the ith character in the string s
     int j = 0;   //j is the jth space in the string s
+    int jj = 0;  //jj is the number of punctuations in the string s
     int k = 0;   //k is the kth end of sentence of string s
 
     for(i = 0; i < characters; i++)
@@ -32,7 +33,25 @@ int main(void)
 
 
     }
-        int letters = characters - j;
+        
+        
+    for(i = 0; i < characters; i++)
+    
+    {
+        
+        if((s[i] == ',') || (s[i] == ';') || (s[i] == ':') || (s[i] == '"'))
+        
+        {
+            
+            jj++;
+            
+        }
+        
+    }
+    
+    
+    
+        int letters = characters - jj;
         int words = j+1;
 
 
