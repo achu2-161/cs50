@@ -19,6 +19,7 @@ int main(void)
     int j = 0;   //j is the jth space in the string s
     int jj = 0;  //jj is the number of punctuations in the string s
     int k = 0;   //k is the kth end of sentence of string s
+    int words = 0;
 
     for(i = 0; i < characters; i++)
 
@@ -33,25 +34,25 @@ int main(void)
 
 
     }
-        
-        
+
+
     for(i = 0; i < characters; i++)
-    
+
     {
-        
-        if((s[i] == ',') || (s[i] == ';') || (s[i] == ':') || (s[i] == '"') || (s[i] == (int) 39))
-        
+
+        if((s[i] > (int) 64) && (s[i] < (int) 90)) || ((s[i] > (int) 96) && (s[i] < (int) 123))
+
         {
-            
-            jj++;
-            
+
+            letters++;
+
         }
-        
+
     }
-    
-    
-    
-        int letters = characters - jj - j;
+
+
+
+        //int letters = characters - jj - j;
         int words = j+1;
 
 
@@ -87,40 +88,40 @@ int main(void)
     float S = (100 * ((float) k / (float) words));
 
     float Index = ((0.0588 * L) - (0.296 * S) - 15.8);
-    
-    
+
+
     //printf("L: %.4f\n", L);
     //printf("S: %.4f\n", S);
     //printf("Index: %.4f\n", Index);
-    
+
     if (Index < 1)
 
     {
-        
+
         printf("Before Grade 1\n");
-        
+
     }
 
-    
+
     else
 
     {
         if(Index > 16)
 
         {
-            
+
             printf("Grade 16+\n");
-            
+
         }
 
-        
+
         else
 
         {
-            
+
             printf("Grade %.0f\n", Index);
         }
-        
+
     }
 
 }
