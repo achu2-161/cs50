@@ -10,7 +10,7 @@ int main(void)
 
     string s = get_string("Text: ");
 
-    int characters = strlen (s);
+    int characters = strlen(s);
 
     //printf("length of string is %i\n", characters);
 
@@ -21,11 +21,11 @@ int main(void)
     int k = 0;   //k is the kth end of sentence of string s
     int letters = 0;
 
-    for(i = 0; i < characters; i++)
+    for (i = 0; i < characters; i++)
 
     {
 
-        if(s[i] == ' ')
+        if (s[i] == ' ')
 
         {
 
@@ -36,11 +36,11 @@ int main(void)
     }
 
 
-    for(i = 0; i < characters; i++)
+    for (i = 0; i < characters; i++)
 
     {
 
-        if(((s[i] > (int) 64) && (s[i] < (int) 90)) || ((s[i] > (int) 96) && (s[i] < (int) 123)))
+        if (((s[i] > (int) 64) && (s[i] < (int) 90)) || ((s[i] > (int) 96) && (s[i] < (int) 123)))
 
         {
 
@@ -52,14 +52,14 @@ int main(void)
 
 
 
-        //int letters = characters - jj - j;
-        int words = j+1;
+    //int letters = characters - jj - j;
+    int words = j + 1;
 
 
-    for(i = 0; i < characters; i++)
+    for (i = 0; i < characters; i++)
 
     {
-        if((s[i] == '.') || (s[i] == '!') || (s[i] == '?'))
+        if ((s[i] == '.') || (s[i] == '!') || (s[i] == '?'))
 
         {
             k++;
@@ -106,7 +106,7 @@ int main(void)
     else
 
     {
-        if(Index > 16)
+        if (Index > 16)
 
         {
 
