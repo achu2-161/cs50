@@ -51,12 +51,12 @@ int main(int argc, string argv[])
 
                 }
 
-                else
+            
 
-                {
+                
                     printf("%c", p);
 
-                }
+                
 
             }
 
