@@ -20,7 +20,7 @@ int main(int argc, string argv[])
     else
 
     {
-        string s = get_string("claintext: ");
+        string s = get_string("plaintext: ");
         string kk = argv[1];
 
         printf("ciphertext: ");
