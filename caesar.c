@@ -14,10 +14,12 @@ int main(int argc, string argv[])
     for (x = 0; x < len; x++)
     
     {
-        if (isdigit(argv[1][x]) == 1)
+        if (isdigit(argv[1][x]) > 0)
         
         {
             y++;
+            
+            printf("%i\n", y);
         }
     }
 
