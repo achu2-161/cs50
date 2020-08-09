@@ -9,10 +9,9 @@ int main(int argc, string argv[])
 {
 
 
-    if (argc == 2 && atoi(argv[1]) == )
+    if (argc == 2 && atoi(argv[1]) == 1)
 
     
-
     {
         string s = get_string("plaintext: ");
         string kk = argv[1];
@@ -36,7 +35,7 @@ int main(int argc, string argv[])
                 int cir = ((ci - 65) % 26) + 65;
                 printf("%c", (char)cir);
 
-             }
+            }
 
             else
 
@@ -77,7 +76,6 @@ int main(int argc, string argv[])
         return 1;
     }
 
-    else
 
 
 }
