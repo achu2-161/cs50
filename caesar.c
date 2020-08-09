@@ -14,6 +14,7 @@ int main(int argc, string argv[])
     {
 
         printf("Usage: ./caesar key");
+        return (1);
     }
 
     else
