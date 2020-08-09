@@ -8,21 +8,33 @@ int main(int argc, string argv[])
 
 {
     
-    int len = strlen(argv[1]);
-    int x, y = 0;
-    
-    for (x = 0; x < len; x++)
+    if (argc != 2)
     
     {
-        if (isdigit(argv[1][x]) > 0)
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
+    
+    
+    
+        int len = strlen(argv[1]);
+        int x, y = 0;
+        
+        for (x = 0; x < len; x++)
         
         {
-            y++;
+            if (isdigit(argv[1][x]) > 0)
             
-            printf("%i\n", y);
+            {
+                y++;
+                
+            }
+            
+            
         }
-    }
-
+        
+    
+    
 
     if (argc == 2 && y == len)
     
