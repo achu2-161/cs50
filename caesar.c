@@ -10,6 +10,7 @@ int main(int argc, string argv[])
 
 
     if (argc == 2 && atoi(argv[1]) > 0)
+    return 0
 
     
     {
