@@ -19,11 +19,10 @@ int main(int argc, string argv[])
     else
 
     {
-        string s = get_string("Plaintext: ");
+        string s = get_string("claintext: ");
         string kk = argv[1];
 
-        printf("Plaintext: %s\n", s);
-        printf("Ciphertext: ");
+        printf("ciphertext: ");
         int k = atoi(kk);
         int i = 0;  //ticker
         int j = 0;  //moves across string
