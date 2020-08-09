@@ -7,9 +7,7 @@
 int main(int argc, string argv[])
 
 {
-   string s = get_string("Plaintext: ");
 
-   string kk = argv[1];
 
     if (argc != 2 || atoi(kk) < 0)
 
@@ -21,6 +19,8 @@ int main(int argc, string argv[])
     else
 
     {
+        string s = get_string("Plaintext: ");
+        string kk = argv[1];
 
         printf("Plaintext: %s\n", s);
         printf("Ciphertext: ");
