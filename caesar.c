@@ -61,7 +61,7 @@ int main(int argc, string argv[])
 
             j++;
 
-        }
+        
 
     
 
@@ -77,7 +77,7 @@ int main(int argc, string argv[])
     }
     
     
-    printf("\n");
+}
 
 }
 
