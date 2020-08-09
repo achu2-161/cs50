@@ -7,9 +7,22 @@
 int main(int argc, string argv[])
 
 {
+    
+    int len = strlen(argv[1]);
+    int x, y = 0;
+    
+    for (x = 0; x < len; x++)
+    
+    {
+        if (isdigit(argv[1][x]) == 1)
+        
+        {
+            y++;
+        }
+    }
 
 
-    if (argc == 2 && atoi(argv[1]) > 0)
+    if (argc == 2 && y == len)
     
 
     
@@ -71,15 +84,15 @@ int main(int argc, string argv[])
     }
     
     
-
+    else
     
     
-    
+    {
 
         printf("Usage: ./caesar key\n");
         return 1;
+    }
     
-
     
 }
 
