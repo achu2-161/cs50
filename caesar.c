@@ -62,10 +62,9 @@ int main(int argc, string argv[])
             j++;
 
         
-
-    
-
          }
+         
+         printf("\n");
     
     }
     
@@ -80,6 +79,5 @@ int main(int argc, string argv[])
     }
     
     
-
 }
 
