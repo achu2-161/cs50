@@ -9,7 +9,7 @@ int main(int argc, string argv[])
 {
 
 
-    if (argc == 2 && atoi(argv[1]) == 1)
+    if (argc == 2 && atoi(argv[1]) >= 1)
 
     
     {
