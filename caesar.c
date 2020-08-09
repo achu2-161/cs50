@@ -9,15 +9,9 @@ int main(int argc, string argv[])
 {
 
 
-    if (argc != 2 || atoi(argv[1]) == 0)
+    if (argc == 2 && atoi(argv[1]) == )
 
-    {
-
-        printf("Usage: ./caesar key\n");
-        return 1;
-    }
-
-    else
+    
 
     {
         string s = get_string("plaintext: ");
@@ -73,6 +67,17 @@ int main(int argc, string argv[])
     printf("\n");
 
     }
+    
+    else
+    
+    
+    {
+
+        printf("Usage: ./caesar key\n");
+        return 1;
+    }
+
+    else
 
 
 }
