@@ -42,6 +42,23 @@ int main(int argc, string argv[])
 
 
     }
+    
+    int xx, yy;
+    
+    for (xx = 0; xx < len; x++)
+    
+    {
+        for (yy = xx + 1; y < len; y ++)
+        {
+            
+        }
+        
+        if (argv[1][yy] == argv[1][xx])
+        
+        {
+            return 0;
+        }
+    }
 
 
     if (argc == 2 && y == 26)  //  if function to determine if argv meets requirements. if y and len are the same it means that all characters in argv are numbers (therefore meet requirements)
