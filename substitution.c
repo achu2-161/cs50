@@ -57,6 +57,7 @@ int main(int argc, string argv[])
             int i = 0;  //ticker
             int j = 0;  //moves across string. j probably needed as i and j increase toether
             int l = strlen(s); //length of string   //  calculates length of string - already done above but redundant because code was rewritten
+            int kk = atoi(k1);
             
             string alpha = "abcdefghijklmnopqrstuvwxyz";
             string ALPHA2 = "ABCEDFGHIJKLMNOPQRSTUVWXYZ";
@@ -66,7 +67,7 @@ int main(int argc, string argv[])
             {
             
             
-                char p0 = k1[i];  //p0 = key text character at ith position in string k1
+                char p0 = kk[i];  //p0 = key text character at ith position in string k1
                 char p1 = s[i]; //p = plain text character at ith position in string s
                 char p2 = alpha[i];  //p2 = original alphabet at the ith position in string alpha
                 char p3 = ALPHA2[i];  //p3 = original alphabet at the ith position in string ALPHA
@@ -79,7 +80,7 @@ int main(int argc, string argv[])
                 if ((pi >= 65) && (pi <= 90))   // determining whether characters are uppercase
                 
                 {
-                    ci = (pi + (piii - k) % 26) + 65; //
+                    ci = (pi + (k - piii) % 26) + 65; //
                     printf("%c", (char)ci);
                 }
                 
@@ -89,7 +90,7 @@ int main(int argc, string argv[])
                      if ((pi >= 97) && (pi <= 122))  //determining characters are lowercase
                      
                      {
-                        ci = (pi + (pii - k) % 26) + 97; //
+                        ci = (pi + (l - pii) % 26) + 97; //
                         printf("%c", (char)ci);
                      }
                      
