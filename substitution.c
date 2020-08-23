@@ -42,13 +42,16 @@ int main(int argc, string argv[])
     }
     
     int ww = 0, xx, yy;
+   
     
     for (xx = 0; xx < len; xx++)
     
     {
-        for (yy = x + 1; yy < len; yy++)
+        for (yy = xx + 1; yy < len; yy++)
         {
-            if (argv[1][xx] == argv[1][yy])
+            char ii = argv[1][xx];
+            char jj = argv[1][yy];
+            if (toupper(ii) == toupper(jj))
             
             {
                 ww++;
