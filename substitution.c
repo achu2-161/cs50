@@ -37,9 +37,7 @@ int main(int argc, string argv[])
         {
             y++;  //y increases everytime a numerical value is found
 
-
         }
-
 
     }
     
@@ -50,7 +48,7 @@ int main(int argc, string argv[])
     {
         for (yy = x + 1; yy < len; yy++)
         {
-            if (argv[1][xx] == argv[1][yy + 1])
+            if (argv[1][xx] == argv[1][yy])
             
             {
                 ww++;
