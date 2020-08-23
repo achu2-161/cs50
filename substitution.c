@@ -48,16 +48,15 @@ int main(int argc, string argv[])
     for (xx = 0; xx < len; xx++)
     
     {
-        for (yy = 0; yy <= xx + 1; yy++)
+        for (yy = 0; yy < len; yy++)
         {
-            zz++;
+            if (argv[1][xx] == argv[1][yy + 1])
+            
+            {
+                ww++;
+            }
         }
         
-        if (argv[1][yy] == argv[1][xx])
-        
-        {
-            ww++;
-        }
         
     }
 
