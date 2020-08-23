@@ -76,7 +76,7 @@ int main(int argc, string argv[])
 
                 {
                     char m = toupper(cl);
-                    printf("%c", n);
+                    printf("%c", m);
                 }
 
                 else
