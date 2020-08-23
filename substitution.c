@@ -43,25 +43,26 @@ int main(int argc, string argv[])
 
     }
     
-    int xx, yy;
+    int ww = 0, xx, yy, zz = 0;
     
-    for (xx = 0; xx < len; x++)
+    for (xx = 0; xx < len; xx++)
     
     {
-        for (yy = xx + 1; y < len; y ++)
+        for (yy = 0; yy <= xx + 1; yy++)
         {
-            
+            zz++;
         }
         
         if (argv[1][yy] == argv[1][xx])
         
         {
-            return 0;
+            ww++;
         }
+        
     }
 
 
-    if (argc == 2 && y == 26)  //  if function to determine if argv meets requirements. if y and len are the same it means that all characters in argv are numbers (therefore meet requirements)
+    if (argc == 2 && y == 26 && ww == 0)  //  if function to determine if argv meets requirements. if y and len are the same it means that all characters in argv are numbers (therefore meet requirements)
                                 //  if y is less than len, then not all characters in argv were numerical, therefore do not meet requirements of argv
                                 //  argv = 2 is redundant here as it has already been done earlier (line 11)
 
