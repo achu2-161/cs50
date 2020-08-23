@@ -50,7 +50,7 @@ int main(int argc, string argv[])
                                 
         {
             string s = get_string("plaintext: ");  // requesting user input for the string
-            string k1 = argv[1];                    // declaring a variable kk  for the key instead of writing argv[1] all the time for the key
+            string k = argv[1];                    // declaring a variable kk  for the key instead of writing argv[1] all the time for the key
 
             printf("ciphertext: ");
             
@@ -66,42 +66,32 @@ int main(int argc, string argv[])
             {
             
             
-                string alpha = "abcdefghijklmnopqrstuvwxyz";
-                string ALPHA2 = "ABCEDFGHIJKLMNOPQRSTUVWXYZ";
-                char p0 = k1[i];  //p0 = key text character at ith position in string k1
-                char p1 = s[i]; //p = plain text character at ith position in string s
-                char p2 = alpha[i];  //p2 = original alphabet at the ith position in string alpha
-                char p3 = ALPHA2[i];  //p3 = original alphabet at the ith position in string ALPHA
-                int k = p0;   //k = plain texy (integer) ASCII number representing character p0
-                int pi = p1;  //pi = plain text (integer) ASCII number representing character p1 (integer format)
-                int pii = p2;  //pii = plain tect (integer) ASCII number representing character p2
-                int piii = p3; //piii = plain text (integer_ ASCII number representing character p3)
-                int ci; // ASCII code representing deciphered code
-                
+                char p = s[i];
+                int p1 = p;
+                char cu = k[p1 - 65];
+                char cl = k[p1 - 97];
                
                 
-                if ((pi >= 65) && (pi <= 90))   // determining whether characters are uppercase
+                if ((p1 >= 65) && (p1 <= 90))   // determining whether characters are uppercase
                 
                 {
-                    ci = (pi + (k - piii) % 26) + 65; //
-                    printf("%c", (char)ci);
+                    printf("%c", cu);
                 }
                 
                 else
                 
                 {
-                     if ((pi >= 97) && (pi <= 122))  //determining characters are lowercase
+                     if ((p1 >= 97) && (p1 <= 122))  //determining characters are lowercase
                      
                      {
-                        ci = (pi + (l - pii) % 26) + 97; //
-                        printf("%c", (char)ci);
+                        printf("%c", cl);
                      }
                      
                       else
                       
                       {
                       
-                      printf("%c", p1);  //print original characters which are not upper or lower characters
+                      printf("%c", p);  //print original characters which are not upper or lower characters
 
                       }
                       
