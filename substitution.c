@@ -59,7 +59,7 @@ int main(int argc, string argv[])
             int l = strlen(s); //length of string   //  calculates length of string - already done above but redundant because code was rewritten
             
             string alpha = "abcdefghijklmnopqrstuvwxyz";
-            string ALPHA = "ABCEDFGHIJKLMNOPQRSTUVWXYZ";
+            string ALPHA2 = "ABCEDFGHIJKLMNOPQRSTUVWXYZ";
             
             for(i = 0; i < l; i++)
             
@@ -69,7 +69,7 @@ int main(int argc, string argv[])
                 char p0 = k1[i];  //p0 = key text character at ith position in string k1
                 char p1 = s[i]; //p = plain text character at ith position in string s
                 char p2 = alpha[i];  //p2 = original alphabet at the ith position in string alpha
-                char p3 = ALPHA[i];  //p3 = original alphabet at the ith position in string ALPHA
+                char p3 = ALPHA2[i];  //p3 = original alphabet at the ith position in string ALPHA
                 int k = p0;   //k = plain texy (integer) ASCII number representing character p0
                 int pi = p1;  //pi = plain text (integer) ASCII number representing character p1 (integer format)
                 int pii = p2;  //pii = plain tect (integer) ASCII number representing character p2
