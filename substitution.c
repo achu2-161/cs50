@@ -43,22 +43,24 @@ int main(int argc, string argv[])
 
     }
     
-    int ww = 0, xx, yy, zz = 0;
+    int ww = 0, xx, yy;
     
     for (xx = 0; xx < len; xx++)
     
     {
-        for (yy = 0; yy < len; yy++)
+        for (yy = x + 1; yy < len; yy++)
         {
             if (argv[1][xx] == argv[1][yy + 1])
             
             {
                 ww++;
+                
             }
         }
-        
-        
     }
+        
+        //printf("%i\n", ww);
+        
 
 
     if (argc == 2 && y == 26 && ww == 0)  //  if function to determine if argv meets requirements. if y and len are the same it means that all characters in argv are numbers (therefore meet requirements)
@@ -126,7 +128,7 @@ int main(int argc, string argv[])
 
         else
         {
-            printf("Usage: ./substitution key\n");  // error message from else statement following line 38
+            printf("Usage: ./substitution key !\n");  // error message from else statement following line 38
             return 1;
 
         }
