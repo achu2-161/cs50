@@ -44,7 +44,7 @@ int main(int argc, string argv[])
     }
 
 
-    if (argc == 2 && y == len)  //  if function to determine if argv meets requirements. if y and len are the same it means that all characters in argv are numbers (therefore meet requirements)
+    if (argc == 2 && y == 26)  //  if function to determine if argv meets requirements. if y and len are the same it means that all characters in argv are numbers (therefore meet requirements)
                                 //  if y is less than len, then not all characters in argv were numerical, therefore do not meet requirements of argv
                                 //  argv = 2 is redundant here as it has already been done earlier (line 11)
                                 
