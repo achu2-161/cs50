@@ -75,7 +75,7 @@ int main(int argc, string argv[])
                 if ((p1 >= 65) && (p1 <= 90))   // determining whether characters are uppercase
 
                 {
-                    char m = toupper(cl);
+                    char m = toupper(cu);
                     printf("%c", m);
                 }
 
