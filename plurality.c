@@ -90,27 +90,27 @@ void print_winner(void)
     // TODO
 
 
-int largest = candidates[0].votes;
+    int largest = candidates[0].votes;
 
 
-for (int a = 0; a < candidate_count; a++)
-{
-
-    if (largest < candidates[a].votes)
+    for (int a = 0; a < candidate_count; a++)
     {
-        largest = candidates[a].votes;
+
+        if (largest < candidates[a].votes)
+        {
+            largest = candidates[a].votes;
+        }
     }
-}
 
 //printf("%i\n", largest);
 
-for (int b = 0; b < candidate_count; b++)
-{
-    if (candidates[b].votes == largest)
+    for (int b = 0; b < candidate_count; b++)
     {
-        printf("%s\n", candidates[b].name);
+        if (candidates[b].votes == largest)
+        {
+            printf("%s\n", candidates[b].name);
+        }
     }
-}
 
     return;
 }
