@@ -252,10 +252,11 @@ bool is_tie(int min)
             }
         }
         
-        if (j == y)
-        
-        return true;
-        
+        if (j == y && y < candidate_count)
+        {
+            
+            return true;
+        }
         
         
     }
