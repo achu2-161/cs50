@@ -242,7 +242,7 @@ bool is_tie(int min)
         }
     }
     
-    if (j * min == voter_count and j < candidate_count)
+    if (j * min == voter_count && j < candidate_count)
     
     {
         return true;
