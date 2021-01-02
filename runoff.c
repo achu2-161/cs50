@@ -221,10 +221,9 @@ int find_min(void)
             min = candidates[a].votes;
         }
         
-          return min;
     }
 
-    // TODO
+  return min;
   
 }
 
@@ -232,26 +231,36 @@ int find_min(void)
 bool is_tie(int min)
 {
     int j = 0;
+    int y = 0
     
-    for (i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
     
     {
-        if (candidates[i].votes = min)
+        if (candidates[i].eliminate == false)
         
         {
             j++;
         }
         
-        if (j > 0)
+        for (int x = 0; x < candidate_count; x++)
         
+        {
+            if (candidate[x].votes % min == 0)
+            
+            {
+                y++
+            }
+        }
+        
+        if (j = y)
         {
             return true;
         }
+        
+        return false;
     }
     
     
-    // TODO
-    return false;
 }
 
 // Eliminate the candidate (or candidates) in last place
