@@ -231,7 +231,7 @@ int find_min(void)
 bool is_tie(int min)
 {
     int j = 0;
-    int y = 0
+    int y = 0;
     
     for (int i = 0; i < candidate_count; i++)
     
