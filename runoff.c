@@ -141,11 +141,11 @@ bool vote(int voter, int rank, string name)
          preferences[voter][rank] = i;
 
 
-         printf ("%s\n", candidates[i].name);
-         printf ("%i ", voter);
-         printf ("%i\n", rank);
+         //printf ("%s\n", candidates[i].name);
+         //printf ("%i ", voter);
+         //printf ("%i\n", rank);
          //printf ("%i\n", j);
-         printf ("%i\n", preferences[voter][rank]);
+         //printf ("%i\n", preferences[voter][rank]);
 
 
 
@@ -186,7 +186,14 @@ void tabulate(void)
 bool print_winner(void)
 {
     
+   for (int i = 0; i < candidate_count; i++)
    
+   {
+       if (candidates[i].votes > candidate_count/2)
+       
+       printf("%s\n", candidates[i].name);
+       return true;
+   }
     
     // TODO
     return false;
@@ -195,6 +202,19 @@ bool print_winner(void)
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
 {
+    
+    int min = candidates[0].votes;
+
+
+    for (int a = 0; a < candidate_count; a++)
+    {
+
+        if (min < candidates[a].vote) && candidates[a].eliminated == false)
+        {
+            min = candidates[a].votes;
+        }
+    }
+
     // TODO
     return 0;
 }
