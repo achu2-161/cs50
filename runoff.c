@@ -197,11 +197,13 @@ bool print_winner(void)
             printf("%s\n", candidates[i].name);
             return true;
        }
+       
+        return false;
+}
    }
     
     // TODO
-    return false;
-}
+   
 
 // Return the minimum number of votes any remaining candidate has
 int find_min(void)
@@ -217,10 +219,12 @@ int find_min(void)
         {
             min = candidates[a].votes;
         }
+        
+          return 0;
     }
 
     // TODO
-    return 0;
+  
 }
 
 // Return true if the election is tied between all candidates, false otherwise
