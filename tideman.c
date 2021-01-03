@@ -135,6 +135,8 @@ void record_preferences(int ranks[])
 
 
                 preferences[ranks[a]][ranks[b]]++;
+
+
             }
         }
 
@@ -159,9 +161,8 @@ void add_pairs(void)
             if (preferences[i][j] > 0)
 
             {
-                x = x + preferences[i][j];
 
-                pair_count = x;
+                pair_count++;
             }
         }
     }
