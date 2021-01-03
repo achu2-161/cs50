@@ -160,7 +160,7 @@ void add_pairs(void)
         for (int n = 0; n < candidate_count; n++)
 
         {
-            if ( preferences[m][n] >check50 cs50/problems/2021/x/tideman 0)
+            if ( preferences[m][n]
 
             {
                 y = preferences[m][n];
