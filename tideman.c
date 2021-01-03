@@ -137,7 +137,7 @@ void record_preferences(int ranks[])
                 preferences[ranks[a]][ranks[b]]++;
             }
         }
-    }
+
 
     // TODO
     return;
