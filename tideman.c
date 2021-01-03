@@ -7,6 +7,7 @@
 
 // preferences[i][j] is number of voters who prefer i over j
 int preferences[MAX][MAX];
+int voter_count;
 
 // locked[i][j] means i is locked in over j
 bool locked[MAX][MAX];
@@ -65,7 +66,7 @@ int main(int argc, string argv[])
     }
 
     pair_count = 0;
-    int voter_count = get_int("Number of voters: ");
+    voter_count = get_int("Number of voters: ");
 
     // Query for votes
     for (int i = 0; i < voter_count; i++)
@@ -149,23 +150,9 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
 
-    int x = 0;
+    int x = candidate_count;
 
-    for (int i = 0; i < candidate_count; i++)
-
-    {
-
-        for (int j = 0; j < candidate_count; j++)
-
-        {
-            if (preferences[i][j] > 0)
-
-            {
-
-                pair_count++;
-            }
-        }
-    }
+    pair_count = ((x - 1) * x) / 2;
 
 
     // TODO
