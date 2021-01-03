@@ -134,12 +134,10 @@ void record_preferences(int ranks[])
 
         {
 
-
                 preferences[ranks[a]][ranks[b]]++;
 
-
-            }
         }
+    }
 
 
     // TODO
@@ -150,38 +148,56 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
 
-    int y = 0;
-    int z = 0;
-    int arr[z];
-
-    for (int m = 0; m < candidate_count; m++)
-
-    {
-        for (int n = 0; n < candidate_count; n++)
-
-        {
-            if (preferences[m][n] >= 0)
-
-            {
-                y = preferences[m][n];
-                z++;
-
-                arr[z] = y;
-
-                printf("%i\n", y);
-            }
-
-        }
-    }
 
     int k = 0;
 
+    int i;
+    int j;
+    int m = 0;
+    int y = 0;
+    int z[0];
+
+    for (i = 0; i < candidate_count; i++)
+
+    {
+        for (j = 0; j < candidate_count; j++)
+
+        {
+            if (preferences[i][j] > 0)
+
+            {
+                z[m] = preferences[i][j];
+
+                m++;
+
+
+            }
+        }
+    }
+
+    int c = 0;
+
+    for (int a = 0; a < (candidate_count^2); a++)
+
+    {
+        for (int b = a + 1; b < (candidate_count^2); b++)
+
+        {
+            if (z[a] == z[b])
+
+            {
+                c++;
+            }
+        }
+    }
 
     int x = candidate_count;
 
-    pair_count = (((x - 1) * x) / 2) - k;
+    pair_count = (((x - 1) * x) / 2) - c;
 
     printf("%i\n", pair_count);
+
+
 
 
     // TODO
