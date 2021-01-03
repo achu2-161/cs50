@@ -160,13 +160,15 @@ void add_pairs(void)
         for (int n = 0; n < candidate_count; n++)
 
         {
-            if ( preferences[m][n] > 0)
+            if (preferences[m][n] >= 0)
 
             {
                 y = preferences[m][n];
                 z++;
 
                 arr[z] = y;
+
+                printf("%i\n", y);
             }
 
         }
@@ -174,20 +176,6 @@ void add_pairs(void)
 
     int k = 0;
 
-    for (int i = 0; i < (candidate_count)^2; i++)
-
-    {
-        for (int j = i + 1; j < (candidate_count)^2; j++)
-
-        {
-            if (arr[i] == arr[j])
-
-            {
-                k++;
-
-            }
-        }
-    }
 
     int x = candidate_count;
 
