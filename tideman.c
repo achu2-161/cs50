@@ -110,10 +110,10 @@ bool vote(int rank, string name, int ranks[])
 
             rank++;
 
-
+            return true;
         }
 
-        return true;
+
     }
 
     // TODO
@@ -149,6 +149,7 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
 
+    int x = 0
 
     for (int i = 0; i < candidate_count; i++)
 
@@ -160,7 +161,9 @@ void add_pairs(void)
             if (preferences[i][j] > 1)
 
             {
-                pair_count++;
+                x = x + preferences[i][j];
+
+                pair_count = x;
             }
         }
     }
