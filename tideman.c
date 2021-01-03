@@ -174,10 +174,10 @@ void add_pairs(void)
 
     int k = 0;
 
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < (candidate_count)^2; i++)
 
     {
-        for (int j = i + 1; j < candidate_count; j++)
+        for (int j = i + 1; j < (candidate_count)^2; j++)
 
         {
             if (arr[i] == arr[j])
