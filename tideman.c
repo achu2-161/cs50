@@ -149,7 +149,7 @@ void record_preferences(int ranks[])
 void add_pairs(void)
 {
 
-    int x = 0
+    int x = 0;
 
     for (int i = 0; i < candidate_count; i++)
 
