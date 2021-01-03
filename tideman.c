@@ -160,7 +160,7 @@ void add_pairs(void)
         for (int n = 0; n < candidate_count; n++)
 
         {
-            if ( preferences[m][n]
+            if ( preferences[m][n] > 0)
 
             {
                 y = preferences[m][n];
