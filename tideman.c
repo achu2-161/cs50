@@ -184,6 +184,7 @@ void add_pairs(void)
 
             {
                 k++;
+
             }
         }
     }
@@ -191,6 +192,8 @@ void add_pairs(void)
     int x = candidate_count;
 
     pair_count = (((x - 1) * x) / 2) - k;
+
+    printf("%i\n", pair_count);
 
 
     // TODO
