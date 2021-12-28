@@ -35,11 +35,11 @@ int main(void)
 
         printf("  ");  //prints double space between 2 pyramids
 
-        for (column = 0; column <= row; column++)  //loop to print the left aligned pyramid
+            for(column = 0; column <= row; column++)  //loop to print the left aligned pyramid
 
-        {
-            printf("#");
-        }
+            {
+                printf("#");
+            }
 
         printf("\n");
 
