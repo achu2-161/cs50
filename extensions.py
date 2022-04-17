@@ -17,4 +17,3 @@ elif x.endswith(".zip") == True:
 else:
     print("application/octet-stream")
 
-    yes
