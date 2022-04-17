@@ -1,24 +1,20 @@
-
-
 def main():
-    hours, minutes = input("Enter time: ").split(":")
 
-    #print(hours)
-    #print(minutes)
+    t = convert(input("What time is it? ").strip())
 
-    time = float(hours) + float(minutes)/60
-
-    if 7 <= time <= 8:
+    if 7 <= t <= 8:
         print("breakfast time")
-    elif 12 <= time <= 13:
+    elif 12 <= t <= 13:
         print ("lunch time")
-    elif 18 <= time <= 19:
+    elif 18 <= t <= 19:
         print ("dinner time")
 
 
+def convert(time):
+    hours, minutes = time.split(":")
 
+    time = float(hours) + float(minutes)/60
+    return(time)
 
-
-
-#if __name__ == "__main__":
-main()
+if __name__ == "__main__":
+    main()
