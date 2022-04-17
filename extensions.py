@@ -6,7 +6,7 @@ elif x.endswith(".jpg") == True:
     print("image/jpeg")
 elif x.endswith(".jpeg") == True:
     print("image/jpeg")
-elif x.endswith(".png") == True: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
+elif x.endswith(".png") == True:
     print("image/png")
 elif x.endswith(".pdf") == True:
     print("application/pdf")
@@ -17,4 +17,4 @@ elif x.endswith(".zip") == True:
 else:
     print("application/octet-stream")
 
-    GHP_E9HYNYNT6VJXKXJM5XJWB1J8WKPRWO0KQBVG 
+    yes
