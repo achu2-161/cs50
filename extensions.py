@@ -3,7 +3,7 @@ x = input("Filename: ").casefold().strip()
 if x.endswith(".gif") == True:
     print("image/gif")
 elif x.endswith(".jpg") == True:
-    print("image/gif")
+    print("image/jpg")
 elif x.endswith(".jpeg") == True:
     print("image/jpeg")
 elif x.endswith(".png") == True:
@@ -13,6 +13,6 @@ elif x.endswith(".pdf") == True:
 elif x.endswith(".txt") == True:
     print("text/plain")
 elif x.endswith(".zip") == True:
-    print("application/x-7z-compressed")
+    print("application/zip")
 else:
     print("application/octet-stream")
