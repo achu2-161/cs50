@@ -21,7 +21,7 @@ def main():
 
             #print (due)
             #print (inserted)
-            print ("Change owed:", inserted + due)
+            print ("Change owed:", abs(due))
 
             break
 
