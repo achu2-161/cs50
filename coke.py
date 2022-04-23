@@ -13,8 +13,16 @@ def main():
 
             print ("Amount due:", due)
 
+        elif due == 0:
+            print ("Change owed: 0")
+            break
+
         else:
-            print("Change owed:", inserted + due)
+
+            #print (due)
+            #print (inserted)
+            print ("Change owed:", inserted + due)
+
             break
 
 
