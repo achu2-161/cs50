@@ -18,6 +18,7 @@ def is_valid(s):
 
     for i in s[j:l]:
         if i.isdigit() and s[j -1:l] == 0:
+            j = j + 1
             #print("numbers need to come at the end:")
             return False
 
