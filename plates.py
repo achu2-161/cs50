@@ -16,6 +16,11 @@ def is_valid(s):
             #print("numbers need to come at the end:")
             return False
 
+    for i in s[j:l]:
+        if i.isdigit() and s[j -1:l] == 0:
+            #print("numbers need to come at the end:")
+            return False
+
     if s.isalnum() == False:
         #print("invalid characters")
         return False
