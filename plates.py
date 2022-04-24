@@ -16,12 +16,6 @@ def is_valid(s):
             #print("numbers need to come at the end:")
             return False
 
-    for i in s[j:l]:
-        if i.isdigit() and s[j -1:l] == 0:
-            j = j + 1
-            #print("numbers need to come at the end:")
-            return False
-
     if s.isalnum() == False:
         #print("invalid characters")
         return False
@@ -30,6 +24,8 @@ def is_valid(s):
         return False
     elif s[0:2].isalpha() == False:
         #print ("2 first characters are not letters")
+        return False
+    elif s[3] == 0:
         return False
     else:
         return True
