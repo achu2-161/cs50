@@ -8,7 +8,7 @@ def main():
 
 def is_valid(s):
 
-    #print (s[0:2])
+    print (s[2])
     l = len(s)
     j = 3
     for i in s[j:l]:
@@ -25,7 +25,7 @@ def is_valid(s):
     elif s[0:2].isalpha() == False:
         #print ("2 first characters are not letters")
         return False
-    elif s[3] == 0:
+    elif s[2] == "0":
         return False
     else:
         return True
