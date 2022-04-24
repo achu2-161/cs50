@@ -8,7 +8,7 @@ def main():
 
 def is_valid(s):
 
-    print (s[0:2])
+    #print (s[0:2])
     l = len(s)
     j = 3
     for i in s[j:l]:
