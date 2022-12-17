@@ -52,9 +52,3 @@ int main(void)
     printf("number of coins: %i\n", ncoins);
 
 }
-
-
-
-
-
-
