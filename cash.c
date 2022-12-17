@@ -1,66 +1,60 @@
-#include <cs50.h>
 #include <stdio.h>
-
-int get_cents(void);
-int calculate_quarters(int cents);
-int calculate_dimes(int cents);
-int calculate_nickels(int cents);
-int calculate_pennies(int cents);
+#include <cs50.h>
+#include <math.h>
 
 int main(void)
+
 {
-    // Ask how many cents the customer is owed
-    int cents = get_cents();
+    //declare variables
 
-    // Calculate the number of quarters to give the customer
-    int quarters = calculate_quarters(cents);
-    cents = cents - quarters * 25;
+    float change;
 
-    // Calculate the number of dimes to give the customer
-    int dimes = calculate_dimes(cents);
-    cents = cents - dimes * 10;
+    int quarter, nquarter, rquarter, dime, ndime, rdime, nickel, nnickel, rnickel, ncoins, npenny;
 
-    // Calculate the number of nickels to give the customer
-    int nickels = calculate_nickels(cents);
-    cents = cents - nickels * 5;
 
-    // Calculate the number of pennies to give the customer
-    int pennies = calculate_pennies(cents);
-    cents = cents - pennies * 1;
+    //operators are located inside do-while loops to so user input can be used to calculate
+    do
+    {
 
-    // Sum coins
-    int coins = quarters + dimes + nickels + pennies;
+        change = get_float("how much change is owed? ");
 
-    // Print total number of coins to give the customer
-    printf("%i\n", coins);
+    }
+
+    while (change < 0);
+
+    //convert into cents
+    quarter = round(change * 100);
+
+    //calculate how many quarters from change
+    nquarter = round(quarter / 25);
+    //calculate how many cents remaining after quarters subtracted
+    rquarter = round(quarter % 25);
+
+    //calculate how many dimes after quarters
+    ndime = round(rquarter / 10);
+    //calculate how many cents remaining after dimes subtracted
+    rdime = round(rquarter % 10);
+
+    //calculate how many nickels after quarters
+    nnickel = round(rdime / 5);
+    //calculate how many cents remaining after nickels subtracted
+    rnickel = round(rdime % 5);
+
+    //calculate how many pennies after nickels
+    npenny = quarter - (nquarter * 25) - (ndime * 10) - (nnickel * 5);
+
+    //add all denominations
+    ncoins = nquarter + ndime + nnickel + npenny;
+
+    printf("%.2f\n", change);
+
+    printf("%i\n", quarter);
+    printf("number of coins: %i\n", ncoins);
+
 }
 
-int get_cents(void)
-{
-    // TODO
-    return 0;
-}
 
-int calculate_quarters(int cents)
-{
-    // TODO
-    return 0;
-}
 
-int calculate_dimes(int cents)
-{
-    // TODO
-    return 0;
-}
 
-int calculate_nickels(int cents)
-{
-    // TODO
-    return 0;
-}
 
-int calculate_pennies(int cents)
-{
-    // TODO
-    return 0;
-}
+
