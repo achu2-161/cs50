@@ -46,9 +46,9 @@ int main(void)
     int product_2 = (two * 2);
 
     int lund_1 = ((product_16 / 10) + (product_16 % 10) + (product_14 / 10) + (product_14 % 10) + (product_12 / 10) +
-        (product_12 % 10) + (product_10 / 10) + (product_10 % 10) + (product_8 / 10) + (product_8 % 10)
-        + (product_6 / 10) + (product_6 % 10) + (product_4 / 10) + (product_4 % 10) + (product_2 / 10)
-        + (product_2 % 10) + one + three + five + seven + nine + eleven + thirteen + fifteen);
+                  (product_12 % 10) + (product_10 / 10) + (product_10 % 10) + (product_8 / 10) + (product_8 % 10)
+                  + (product_6 / 10) + (product_6 % 10) + (product_4 / 10) + (product_4 % 10) + (product_2 / 10)
+                  + (product_2 % 10) + one + three + five + seven + nine + eleven + thirteen + fifteen);
 
 
 
