@@ -55,15 +55,15 @@ int get_cents(void)
 
 int calculate_quarters(int cents)
 {
-    int dimes;
+    int quarters;
 
-    for (dimes = 0; cents > 0; dimes++)
+    for (quarters = 0; cents > 0; quarters++)
 
         {
             cents = cents - 25;
         }
 
-    return dimes;
+    return quarters;
 }
 
 int calculate_dimes(int cents)
