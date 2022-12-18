@@ -42,15 +42,15 @@ int get_cents(void)
     int change;
     do
 
-        {
+    {
 
         change = get_int("Change owed: ");
 
-        }
+    }
 
-        while (change < 0);
+    while (change < 0);
 
-     return change;
+    return change;
 }
 
 int calculate_quarters(int cents)
@@ -59,48 +59,48 @@ int calculate_quarters(int cents)
 
     for (quarters = 0; cents >= 25; quarters++)
 
-        {
-            cents = cents - 25;
-        }
+    {
+        cents = cents - 25;
+    }
 
     return quarters;
 }
 
 int calculate_dimes(int cents)
 {
-   int dimes;
+    int dimes;
 
     for (dimes = 0; cents >= 10; dimes++)
 
-        {
-            cents = cents - 10;
-        }
+    {
+        cents = cents - 10;
+    }
 
     return dimes;
 }
 
 int calculate_nickels(int cents)
 {
-   int nickels;
+    int nickels;
 
     for (nickels = 0; cents >= 5; nickels++)
 
-        {
-            cents = cents - 5;
-        }
+    {
+        cents = cents - 5;
+    }
 
     return nickels;
 }
 
 int calculate_pennies(int cents)
 {
-   int pennies;
+    int pennies;
 
     for (pennies = 0; cents >= 1; pennies++)
 
-        {
-            cents = cents - 1;
-        }
+    {
+        cents = cents - 1;
+    }
 
     return pennies;
 }
