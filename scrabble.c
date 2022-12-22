@@ -50,7 +50,7 @@ int compute_score(string word)
 
     //printf("%i\n", word[0]);
 
-    for(int i = 0; i < l; i++)
+    for (int i = 0; i < l; i++)
 
     {
         int a = 0;
