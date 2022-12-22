@@ -52,7 +52,7 @@ int main(void)
 
     else
     {
-        printf("Grade %.0f\n",index);
+        printf("Grade %.0f\n", index);
     }
 
 
