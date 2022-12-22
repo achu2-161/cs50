@@ -32,10 +32,10 @@ int main(void)
     int number_sentences = count_sentences(text);
     //printf("%i sentences\n", number_sentences);
 
-    float L = 100 * number_letters / (number_words);
-    float s = 100 * number_sentences / (number_words);
+    float L = 100 * (float) number_letters / (float) number_words;
+    float s = 100 * (float) number_sentences / (float) number_words;
 
-    int index = 0.0588 * L - 0.296 * s - 15.8;
+    float index = 0.0588 * L - 0.296 * s - 15.8;
 
 
     if (index < 0)
@@ -52,7 +52,7 @@ int main(void)
 
     else
     {
-        printf("Grade %.0f\n", round(index));
+        printf("Grade %.0f\n",index);
     }
 
 
