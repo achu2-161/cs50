@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <math.h>
 
 int count_letters(string text);
 int count_words(string text);
@@ -37,6 +38,7 @@ int main(void)
     int index = 0.0588 * L - 0.296 * s - 15.8;
 
 
+
     if (index < 0)
 
     {
@@ -51,7 +53,7 @@ int main(void)
 
     else
     {
-        printf("Grade %i\n", index);
+        printf("Grade %f\n", round(index));
     }
 
 
