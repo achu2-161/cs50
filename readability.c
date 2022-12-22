@@ -35,7 +35,7 @@ int main(void)
     float L = 100 * number_letters / (number_words);
     float s = 100 * number_sentences / (number_words);
 
-    int index = round(0.0588 * L - 0.296 * s - 15.8);
+    int index = 0.0588 * L - 0.296 * s - 15.8;
 
 
     if (index < 0)
@@ -52,7 +52,7 @@ int main(void)
 
     else
     {
-        printf("Grade %i\n", index);
+        printf("Grade %.0f\n", round(index));
     }
 
 
