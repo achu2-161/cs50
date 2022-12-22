@@ -63,7 +63,7 @@ int compute_score(string word)
             score = score + word[i] - 65;
         }
 
-        else if
+        else if (islower(word[i]))
 
         {
             score = score + word[i] - 97;
