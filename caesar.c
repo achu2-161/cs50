@@ -73,7 +73,7 @@ bool only_digits(string input_arg)
         else
 
         {
-            return 0;
+            return 1;
         }
     }
 
