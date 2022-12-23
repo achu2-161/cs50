@@ -13,10 +13,10 @@ int main(int argc, string argv[])
 {
     string plaintext;
 
-    if (argc < 2)
+    if (argc != 2)
 
     {
-        return 0;
+        return 1;
     }
 
     bool n = only_digits(argv[argc-1]);
