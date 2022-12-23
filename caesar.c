@@ -13,7 +13,11 @@ int main(int argc, string argv[])
 {
     string plaintext;
 
-   
+    if (argc != 2)
+
+    {
+        return 1;
+    }
 
     bool n = only_digits(argv[argc-1]);
 
@@ -51,11 +55,13 @@ int main(int argc, string argv[])
 bool only_digits(string input_arg)
 
 {
-    //int key = atoi(input_arg);
+    int key = atoi(input_arg);
+
+    int l = strlen(input_arg);
 
     int a = 0;
 
-    for (int i = 0; i <= strlen(input_arg); i++)
+    for (int i = 0; i < l; i++)
 
     {
 
@@ -71,18 +77,23 @@ bool only_digits(string input_arg)
         {
             return 1;
         }
+
+
+        if (a == l)
+
+        {
+
+            return 0;
+        }
+
+        else
+
+        {
+
+            return 1;
+        }
+
     }
-
-    if (a == strlen(input_arg))
-
-    {
-
-        //printf("key is a valid number\n");
-        return 0;
-    }
-
-        //printf("Usage: ./caesar key\n");
-        return 1;
 }
 
 char rotate(char input, int key)
