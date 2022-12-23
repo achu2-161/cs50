@@ -65,7 +65,7 @@ bool only_digits(string input_arg)
 
     {
 
-        if (isdigit(input_arg[i]))
+        if (0 <= atoi(input_arg[i]) <= 9)
 
         {
 
@@ -77,6 +77,8 @@ bool only_digits(string input_arg)
         {
             return 1;
         }
+
+    }
 
 
         if (a == l)
@@ -93,7 +95,7 @@ bool only_digits(string input_arg)
             return 1;
         }
 
-    }
+
 }
 
 char rotate(char input, int key)
