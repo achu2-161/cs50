@@ -63,6 +63,12 @@ bool only_digits(string input_arg)
 
             a++;
         }
+
+        else
+
+        {
+            return 0;
+        }
     }
 
     if (a == strlen(input_arg))
@@ -70,11 +76,11 @@ bool only_digits(string input_arg)
     {
 
         //printf("key is a valid number\n");
-        return 0;
+        return 1;
     }
 
         //printf("Usage: ./caesar key\n");
-        return 1;
+        return 0;
 }
 
 char rotate(char input, int key)
