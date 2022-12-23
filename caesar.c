@@ -59,7 +59,7 @@ bool only_digits(string input_arg)
 
     int a = 0;
 
-    for (int i = 0; i < strlen(input_arg); i++)
+    for (int i = 0; i <= strlen(input_arg); i++)
 
     {
 
@@ -82,11 +82,11 @@ bool only_digits(string input_arg)
     {
 
         //printf("key is a valid number\n");
-        return 1;
+        return 0;
     }
 
         //printf("Usage: ./caesar key\n");
-        return 0;
+        return 1;
 }
 
 char rotate(char input, int key)
