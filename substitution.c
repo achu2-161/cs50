@@ -9,6 +9,22 @@ int main(int argc, string argv[])
 {
 
 
+    if (argc != 2)
+
+    {
+        printf("Usage: ./substitution key\n");
+        return 1;
+    }
+
+    else if(strlen(argv[1]) != 26)
+
+    {
+        printf("Key must contain 26 characters\n");
+        return 1;
+    }
+
+
+
     int z = 0;
 
     string key = argv[1];
@@ -24,31 +40,19 @@ int main(int argc, string argv[])
     for (int y = 0; y < strlen(argv[1]); y++)
 
         {
-            if((isalpha(key[y])) == 1)
+            if(isalpha(key[y]))
 
             {
-                printf("Usage: ./substitution key\n");
-                return 1;
+                if(y == strlen(argv[1]))
+
+                {
+                    printf("Usage: ./substitution key\n");
+                    return 1;
+                }
+
             }
         }
 
-    if ((argc != 2))
-
-    {
-        printf("Usage: ./substitution key\n");
-        return 1;
-    }
-
-    else if(strlen(argv[1]) != 26)
-
-    {
-        printf("Key must contain 26 characters\n");
-        return 1;
-    }
-
-    else
-
-    {
 
 
 
@@ -109,5 +113,5 @@ int main(int argc, string argv[])
     printf("\n");
     return 0;
 
-    }
+    
 }
