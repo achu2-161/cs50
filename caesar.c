@@ -72,11 +72,11 @@ bool only_digits(string input_arg)
 
     {
 
-        if (isdigit(input_arg[0]))
+        if (isdigit(input_arg[i]))
 
         {
 
-            return 0;
+
             a++;
         }
 
@@ -90,22 +90,24 @@ bool only_digits(string input_arg)
     }
 
 
-        if (a == l)
+    if (a == l)
 
-        {
+    {
 
-            return 0;
-        }
+        return 0;
+    }
 
-        else
+    else
 
-        {
+    {
 
-            return 1;
-        }
+        return 1;
+    }
 
 
 }
+
+
 
 char rotate(char input, int key)
 
