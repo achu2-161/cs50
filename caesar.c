@@ -37,6 +37,7 @@ int main(int argc, string argv[])
     else
 
     {
+        printf("Usage: ./caesar key\n");
         return 0;
     }
 
@@ -75,13 +76,14 @@ bool only_digits(string input_arg)
 
         {
 
+            return 0;
             a++;
         }
 
         else
 
         {
-            printf("Usage: ./caesar key\n");
+            
             return 1;
         }
 
@@ -98,7 +100,7 @@ bool only_digits(string input_arg)
         else
 
         {
-            printf("Usage: ./caesar key\n");
+
             return 1;
         }
 
