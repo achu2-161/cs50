@@ -81,6 +81,7 @@ bool only_digits(string input_arg)
         else
 
         {
+            printf("Usage: ./caesar key\n");
             return 1;
         }
 
