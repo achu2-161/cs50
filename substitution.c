@@ -13,12 +13,41 @@ int main(int argc, string argv[])
 
     string key = argv[1];
     char k = key[z];
-    string lower_alphabet = "abcdefghijklmnopqrstivwxyz";
+    string lower_alphabet = "abcdefghijklmnopqrstuvwxyz";
     string upper_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     string s = get_string("plaintext: ");
 
+
+
     int l = strlen(s);
+
+    //
+
+
+    for (int y = 0; y < strlen(argv[1]); y++)
+
+        {
+            if((isalpha(key[y])) == 1)
+
+            {
+                printf("Usage: ./substitution key\n");
+            }
+        }
+
+    if ((argc != 0) || strlen(argv[1]) != 26)
+
+    {
+        printf("Usage: ./substitution key\n");
+    }
+
+    else
+
+    {
+
+
+
+    //
 
 
     printf("ciphertext: ");
@@ -71,5 +100,5 @@ int main(int argc, string argv[])
 
     printf("\n");
 
-
+    }
 }
