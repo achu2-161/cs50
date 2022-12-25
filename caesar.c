@@ -25,34 +25,34 @@ int main(int argc, string argv[])
     {
 
 
-    bool n = only_digits(argv[argc-1]);
+        bool n = only_digits(argv[argc - 1]);
 
-    if (n == 0)
+        if (n == 0)
 
-    {
-        plaintext = get_string("plaintext: ");
+        {
+            plaintext = get_string("plaintext: ");
 
-    }
+        }
 
-    else
+        else
 
-    {
-        printf("Usage: ./caesar key\n");
-        return 1;
-    }
+        {
+            printf("Usage: ./caesar key\n");
+            return 1;
+        }
 
 
-    printf("ciphertext: ");
+        printf("ciphertext: ");
 
-    for (int j = 0; j < strlen(plaintext); j++)
+        for (int j = 0; j < strlen(plaintext); j++)
 
-    {
-        char c = rotate(plaintext[j], atoi(argv[1]));
-        printf("%c", c);
+        {
+            char c = rotate(plaintext[j], atoi(argv[1]));
+            printf("%c", c);
 
-    }
+        }
 
-    printf("\n");
+        printf("\n");
 
     }
 }
@@ -121,14 +121,14 @@ char rotate(char input, int key)
     {
         casc = (asc + key - 65) % 26;
         //printf("casc is: %i\n", casc);
-        return (char) (casc + 65);
+        return (char)(casc + 65);
     }
 
     else if (islower(input))
 
     {
         casc = (asc + key - 97) % 26;
-        return (char) (casc +97);
+        return (char)(casc + 97);
     }
 
     else
