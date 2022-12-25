@@ -21,11 +21,17 @@ int main(int argc, string argv[])
     int l = strlen(s);
 
 
-
+    printf("ciphertext: ");
 
     for (int i = 0; i < l; i++)
 
     {
+        if(isalpha(s[i]) == 0)
+
+        {
+            printf("%c", s[i]);
+        }
+
         for (int j = 0; j < 26; j++)
 
         {
@@ -55,14 +61,6 @@ int main(int argc, string argv[])
                 }
 
 
-            }
-
-            else
-
-            {
-
-                printf("%c", s[i]);
-                i++;
             }
 
 
