@@ -43,7 +43,7 @@ int main(int argc, string argv[])
             if(isalpha(key[y]))
 
             {
-                if(y == strlen(argv[1]))
+                if(y != strlen(argv[1]))
 
                 {
                     printf("Usage: ./substitution key\n");
@@ -113,5 +113,5 @@ int main(int argc, string argv[])
     printf("\n");
     return 0;
 
-    
+
 }
