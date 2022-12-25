@@ -5,29 +5,43 @@
 #include <ctype.h>
 #include <stdlib.h>
 
+
+bool check_key_length(string u);
+bool check_arg_count(int argc);
+bool check_key_characters(string u);
+char rotate_letter(string s);
+
 int main(int argc, string argv[])
 {
 
+    string key = argv[1];
 
-    if (argc != 2)
+    if(check_arg_count(argc) == 1)
+
+    {
+
+        printf("Key must contain 26 characters.\n");
+        return 1;
+    }
+
+    else if(check_key_length(argv[1]) == 1)
 
     {
         printf("Usage: ./substitution key\n");
         return 1;
     }
 
-    else if(strlen(argv[1]) != 26)
+    else if (check_key_characters(argv[1]) == 1)
 
     {
-        printf("Key must contain 26 characters\n");
+        printf("Usage: ./substitution key\n");
         return 1;
+
     }
-
-
 
     int z = 0;
 
-    string key = argv[1];
+
     char k = key[z];
     string lower_alphabet = "abcdefghijklmnopqrstuvwxyz";
     string upper_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -37,21 +51,7 @@ int main(int argc, string argv[])
     //
 
 
-    for (int y = 0; y < strlen(argv[1]); y++)
 
-        {
-            if(isalpha(key[y]))
-
-            {
-                if(y != strlen(argv[1]))
-
-                {
-                    printf("Usage: ./substitution key\n");
-                    return 1;
-                }
-
-            }
-        }
 
 
 
@@ -113,5 +113,54 @@ int main(int argc, string argv[])
     printf("\n");
     return 0;
 
+//
+
+}
+
+bool check_key_length(string u)
+
+{
+    if (strlen(u) != 26)
+
+    {
+        return 1;
+    }
+
+    return 0;
+
+}
+
+bool check_arg_count(int argc)
+
+{
+    if(argc != 2)
+
+    {
+        return 1;
+    }
+
+    return 0;
+}
+
+bool check_key_characters(string u)
+
+{
+
+    int x = 0;
+    int z = 0;
+
+    for(x = 0; isalpha(u[x]); x++)
+
+    {
+        z++;
+    }
+
+    if (z != strlen(u))
+
+    {
+        return 1;
+    }
+
+    return 0;
 
 }
