@@ -16,10 +16,6 @@ int main(int argc, string argv[])
     string lower_alphabet = "abcdefghijklmnopqrstuvwxyz";
     string upper_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    string s = get_string("plaintext: ");
-
-
-
     int l = strlen(s);
 
     //
@@ -32,13 +28,22 @@ int main(int argc, string argv[])
 
             {
                 printf("Usage: ./substitution key\n");
+                return 0;
             }
         }
 
-    if ((argc != 2) || strlen(argv[1]) != 26)
+    if ((argc != 2))
 
     {
         printf("Usage: ./substitution key\n");
+        return 0;
+    }
+
+    else if(strlen(argv[1]) != 26)
+
+    {
+        printf("Key must contain 26 characters");
+        return 0;
     }
 
     else
@@ -49,6 +54,8 @@ int main(int argc, string argv[])
 
     //
 
+
+    string s = get_string("plaintext: ");
 
     printf("ciphertext: ");
 
@@ -99,6 +106,7 @@ int main(int argc, string argv[])
     }
 
     printf("\n");
+    return 0;
 
     }
 }
