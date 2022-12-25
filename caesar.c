@@ -16,12 +16,18 @@ int main(int argc, string argv[])
     if (argc != 2)
 
     {
+        printf("Usage: ./caesar key\n");
         return 1;
     }
 
+    else
+
+    {
+
+
     bool n = only_digits(argv[argc-1]);
 
-    if (n == true)
+    if (n == 0)
 
     {
         plaintext = get_string("plaintext: ");
@@ -47,7 +53,7 @@ int main(int argc, string argv[])
 
     printf("\n");
 
-
+    }
 }
 
 
@@ -65,7 +71,7 @@ bool only_digits(string input_arg)
 
     {
 
-        if (0 <= atoi(input_arg[i]) <= 9)
+        if (isdigit(input_arg[0]))
 
         {
 
@@ -91,7 +97,7 @@ bool only_digits(string input_arg)
         else
 
         {
-
+            printf("Usage: ./caesar key\n");
             return 1;
         }
 
