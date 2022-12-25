@@ -16,7 +16,7 @@ int main(int argc, string argv[])
     string lower_alphabet = "abcdefghijklmnopqrstuvwxyz";
     string upper_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    int l = strlen(s);
+
 
     //
 
@@ -56,6 +56,7 @@ int main(int argc, string argv[])
 
 
     string s = get_string("plaintext: ");
+    int l = strlen(s);
 
     printf("ciphertext: ");
 
