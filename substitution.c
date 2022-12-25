@@ -35,7 +35,7 @@ int main(int argc, string argv[])
             }
         }
 
-    if ((argc != 0) || strlen(argv[1]) != 26)
+    if ((argc != 2) || strlen(argv[1]) != 26)
 
     {
         printf("Usage: ./substitution key\n");
