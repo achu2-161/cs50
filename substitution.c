@@ -10,6 +10,7 @@ bool check_key_length(string u);
 bool check_arg_count(int argc);
 bool check_key_characters(string u);
 char rotate_letter(string s);
+bool check_duplicates(string u);
 
 int main(int argc, string argv[])
 {
@@ -39,24 +40,20 @@ int main(int argc, string argv[])
 
     }
 
+    else if(check_duplicates(argv[1]) == 1)
+
+    {
+        printf("Usage: ./substitution key\n");
+        return 1;
+
+    }
+
     int z = 0;
 
 
     char k = key[z];
     string lower_alphabet = "abcdefghijklmnopqrstuvwxyz";
     string upper_alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
-
-
-    //
-
-
-
-
-
-
-
-    //
 
 
     string s = get_string("plaintext: ");
@@ -163,4 +160,32 @@ bool check_key_characters(string u)
 
     return 0;
 
+}
+
+bool check_duplicates(string u)
+
+{
+    int counter = 0;
+
+    for (int i = 0; i < strlen(u); i++)
+
+    {
+        for(int j = i + 1; j < strlen(u); j++)
+
+        {
+            if(u[i] == u[j])
+
+            {
+                counter++;
+            }
+        }
+    }
+
+    if (counter > 0)
+
+    {
+        return 1;
+    }
+
+    return 0;
 }
