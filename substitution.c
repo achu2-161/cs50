@@ -147,7 +147,7 @@ bool check_key_characters(string u)
     for (x = 0; x < strlen(u); x++)
 
     {
-        if(isalpha(u[x]))
+        if (isalpha(u[x]))
 
         {
             z++;
