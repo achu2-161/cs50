@@ -15,7 +15,7 @@ bool check_duplicates(string u);        //declatation of function to identify du
 int main(int argc, string argv[])
 {
 
-    string key = argv[1];               //store key in a string variable
+    string key = argv[1];               //store key in a string variable k
 
     if (check_arg_count(argc) == 1)     //call funtion to count arguments
 
@@ -106,7 +106,7 @@ int main(int argc, string argv[])
 
     }
 
-    printf("\n");                                               //after all i characters from plaintext s have been matched, print new line
+    printf("\n");                                           //after all i characters from plaintext s have been matched, print new line
     return 0;
 
 //
@@ -132,63 +132,70 @@ bool check_arg_count(int argc)                              //definition of func
     if (argc != 2)                                          //if number of arguments is not 2
 
     {
-        return 1;                                           //return 1
+        return 1;                                           //function returns 1
     }
 
-    return 0;                                               ///return 0
+    return 0;                                               ///otherwise returns 0
 }
 
 bool check_key_characters(string u)                         //definition of function to check that all characters are alphabetical
 
 {
 
-    int x = 0;                                              //initialise variable x as 0. x will be used as the counter to count alphabetical characters
-    int z = 0;                                              //initialise variable z as 0. z will be used to store length of key. not necessary to use variable for this
+    int x = 0;                                              //initialise variable x as 0. x will be the ticker to cycle through all the characters in string u
+    int z = 0;                                              //initialise variable z as 0. z will b used to store number of alphabetical characters in string u
 
-    for (x = 0; x < strlen(u); x++)                         //loop to cycle through all the characters inside key. when condition is met (ie when character at xth position is alphabetical), increase counter
+    for (x = 0; x < strlen(u); x++)                         //loop to cycle through all the characters inside key.
 
     {
-        if(isalpha(u[x]))
+        if(isalpha(u[x]))                                   //check if character in key at xth position is alphabetical
 
         {
-            z++;
+            z++;                                            //if condition in if statement (i.e. character is alphabetical), increase counter z by 1
         }
     }
 
-    if (z != strlen(u))
+    if (z != strlen(u))                                     //after loops has cycled through all characters in the string, is alphabetical counter is not equal to length of string (i.e. non alpha characters were indeitified)
 
     {
-        return 1;
+        return 1;                                           //return 1
     }
 
-    return 0;
+    return 0;                                               //otherwise return 0
 
 }
 
-bool check_duplicates(string u)
+bool check_duplicates(string u)                             //definition of function to identify duplicates
 
 {
-    int counter = 0;
+    int counter = 0;                                        //initialisation of integer variable counter to count how many duplicates
 
-    for (int i = 0; i < strlen(u); i++)
+    for (int i = 0; i < strlen(u); i++)                     //2 loops are run on string um one using counter i, the other counter j
 
     {
-        for (int j = i + 1; j < strlen(u); j++)
+        for (int j = i + 1; j < strlen(u); j++)             //defining j as i + 1 ensures that characters at the same position from 2 counters are not identified (i.e avoids that i and j have the same value, which would return a duplicate)
 
         {
-            if (u[i] == u[j])
+            if (u[i] == u[j])                               //if character at ith position and character at ith position are the same (i.e. duplicate identified)
 
             {
-                counter++;
+                counter++;                                  //increase counter by 1
             }
         }
     }
 
-    if (counter > 0)
+    if (counter > 0)                                        //after all characters in the key have been looped, is counter is greater than 1 (i.e. duplicates identified)
 
     {
-        return 1;
+        return 1;                                           //function returns 1
     }
 
-    return 0;
+    return 0;                                               //otherwise function returns 0
 }
+
+
+//what can be imprived in this program:
+
+// - rotating letters could be defined as a separate function and called in main, as opposed to be defined in main. I initially planned to do this (hence why the function was declared at the top of program), but i ended up definint it in the main because cbf
+// - instead of defining 2 variables upper and lower alphabets, i could have used ascii codes
+// - some of the headers are not necessary, but they were copied from a previous assignment
