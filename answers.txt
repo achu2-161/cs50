@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: The runtime for the best scenario (sorted) was shorter than that of the worst scenario (reversed)
+
+sort2 uses: merge sort
+
+How do you know?: It was the fastest algorithm across all scenarios
+
+sort3 uses: selection sort
+
+How do you know?: the runtimes for the best scenario (sorted) and that of the worst scenario(reversed) were in the same order
