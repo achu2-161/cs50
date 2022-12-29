@@ -77,16 +77,20 @@ bool vote(string name)
             return true;
         }
 
+        return false;
+
     }
 
-    return false;
+
 
     // TODO
 
 }
 
 // Print the winner (or winners) of the election
+
 void print_winner(void)
+
 {
 
     int t = 0;
@@ -106,10 +110,10 @@ void print_winner(void)
 
         {
             if (candidates[j].votes == s)
+
             {
                 printf("%s\n", candidates[j].name);
             }
-
 
         }
     }
