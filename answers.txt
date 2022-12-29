@@ -4,7 +4,7 @@ How do you know?: The runtime for the best scenario (sorted) was shorter than th
 
 sort2 uses: merge sort
 
-How do you know?: It was the fastest algorithms across all scenarios
+How do you know?: It was the fastest algorithm across all scenarios
 
 sort3 uses: selection sort
 
