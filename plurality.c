@@ -93,26 +93,27 @@ void print_winner(void)
 
 {
 
-    int t = 0;
+    int total_v = 0;
 
     for(int i = 0; i < candidate_count; i++)
 
     {
-        t = t + candidates[i].votes;
+        total_v = total_v + candidates[i].votes;
     }
 
-    int s = t;
+    int s = total_v;
 
     for(int j = 0; j <= candidate_count; j++)
 
     {
-        for(s = t; s > 0; s--)
+        for(s = total_v; s > 0; s--)
 
         {
             if (candidates[j].votes == s)
 
             {
                 printf("%s\n", candidates[j].name);
+                return;
             }
 
         }
