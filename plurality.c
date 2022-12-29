@@ -103,10 +103,10 @@ void print_winner(void)
 
     int s = total_v;
 
-    for(int j = 0; j <= candidate_count; j++)
+    for(s = total_v; s > 0; s--)
 
     {
-        for(s = total_v; s > 0; s--)
+        for(int j = 0; j < candidate_count; j++)
 
         {
             if (candidates[j].votes == s)
