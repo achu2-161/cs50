@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
+#include <strings.h>
 
 // Max number of candidates
 #define MAX 9
@@ -68,70 +69,49 @@ bool vote(string name)
 {
 
     for (int i = 0; i < candidate_count; i++)
-
     {
-        if (strcmp(name, candidates[i].name) == 0)
+        if (strcasecmp(name, candidates[i].name) == 0)
 
         {
-            candidates[i].votes++;
+            candidates[i].votes = candidates[i].votes + 1;
+
+
             return true;
         }
-
-
     }
 
-    return false;
-
-
     // TODO
-
+    return false;
 }
 
 // Print the winner (or winners) of the election
-
 void print_winner(void)
-
 {
+    // TODO
 
-    int total_v = 0;
 
-    for (int i = 0; i < candidate_count; i++)
+    int largest = candidates[0].votes;
 
+
+    for (int a = 0; a < candidate_count; a++)
     {
-        total_v = total_v + candidates[i].votes;
-    }
 
-    int s = total_v;
-
-    for (s = total_v; s > 0; s--)
-
-    {
-        for (int j = 0; j < candidate_count; j++)
-
+        if (largest < candidates[a].votes)
         {
-            if (candidates[j].votes == s)
-
-            {
-                printf("%s\n", candidates[j].name);
-
-                for (int k = j + 1; k < candidate_count; k++)
-
-                {
-                    if (candidates[j].votes == candidates[k].votes)
-
-                    {
-                        printf("%s\n", candidates[k].name);
-                    }
-                }
-
-                return;
-            }
-
+            largest = candidates[a].votes;
         }
     }
 
+//printf("%i\n", largest);
 
-    // TODO
+    for (int b = 0; b < candidate_count; b++)
+    {
+        if (candidates[b].votes == largest)
+        {
+            printf("%s\n", candidates[b].name);
+        }
+    }
+
     return;
 }
 
