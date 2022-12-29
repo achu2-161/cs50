@@ -96,7 +96,7 @@ void print_winner(void)
 
     int s = t;
 
-    for(int j = 0; j < candidate_count; j++)
+    for(int j = 0; j <= candidate_count; j++)
 
     {
         for(s = t; s > 0; s--)
