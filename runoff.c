@@ -155,17 +155,17 @@ void tabulate(void)                                                             
     // TODO
 
     int total = 0;                                                              //initialisation of int variable total to calculate total number of votes (voters * candidates) - will probably not use in this functin
-                                                                     //initialisation of int variable k = 0. k will be used to increment the preference in case a candidate is eliminated and the ballots with that candidate's top preference needs to be ignored
+                                                                                //initialisation of int variable k = 0. k will be used to increment the preference in case a candidate is eliminated and the ballots with that candidate's top preference needs to be ignored
 
     for (int i = 0; i < voter_count; i++)                                       //nested loops to go through all voters and all candidates
                                                                                 //outside loop cycles through all voters using counter i
     {
-        int k = 0;
+        
 
         for (int j = 0; j < candidate_count; j++)                               //inside loop cycles through all candidates using counter j
 
         {
-                                                                     //for each looop that is run, total is incremented by 1 (again, not sure to be used in this function)
+            int k = 0;
 
             if (candidates[j].eliminated == false)                              //condition to check is candidate has been eliminated. information is taken from data struct. in the first round, all candidates are still in the race. *presumably another function will update this global variable later
 
