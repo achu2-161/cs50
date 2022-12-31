@@ -176,7 +176,7 @@ void tabulate(void)                                                             
                                                                                 //if vote from voter i does not correspond to candidate j, no global variabls is incremented
             }
 
-            else                                                                //if candidate is eliminated
+            else if (candidates[j].eliminated == true)                                                                //if candidate is eliminated
 
             {
                 k++;                                                            //variable k is incremented so that the next preference on ballots with eliminated candidates set as higher preference is checked
