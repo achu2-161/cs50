@@ -3,42 +3,42 @@
 #include <string.h>
 
 // Max voters and candidates
-#define MAX_VOTERS 100                                                                      //declaration of max number of voters stored in int variable MAX_VOTERS = 100
-#define MAX_CANDIDATES 9                                                                    //declaration of max number of candidates stored in int variable MAX_CANDIDATES = 9
+#define MAX_VOTERS 100
+#define MAX_CANDIDATES 9
 
 // preferences[i][j] is jth preference for voter i
-int preferences[MAX_VOTERS][MAX_CANDIDATES];                                                //int array variable preference storing every vote - array contains voter index (i) and preference (j) eg preferences[0][1] = 2 means voter 0 has selected preference 1 (or rank 1) as candidate 2
+int preferences[MAX_VOTERS][MAX_CANDIDATES];
 
 // Candidates have name, vote count, eliminated status
-typedef struct                                                                              //declaration of a data structure storing:
+typedef struct
 {
-    string name;                                                                            //string variable name to store name of candidate
-    int votes;                                                                              //int variable votes to store how many votes candidates received - initially 0th preference votes and will keep being updates as runoff run and lower preferences are counted
-    bool eliminated;                                                                        //bool variable eliminated to store whether a candidate has been eliminated
+    string name;
+    int votes;
+    bool eliminated;
 }
-candidate;                                                                                  //name of data structure is candidate
+candidate;
 
 // Array of candidates
-candidate candidates[MAX_CANDIDATES];                                                       //declaration of array candidates containing the data structure candidate. the array takes up to MAX_CANDIDATES items = 9
+candidate candidates[MAX_CANDIDATES];
 
 // Numbers of voters and candidates
-int voter_count;                                                                            //declaration of int variable voter_count storing number of voters - will be input by user later using a get_int function
-int candidate_count;                                                                        //declaration of int variable candidate_count storing number of candidates - is obtained from argc - 1 from CLI (argc = number of candidates + name of program)
+int voter_count;
+int candidate_count;
 
 // Function prototypes
-bool vote(int voter, int rank, string name);                                                //declaration of function vote returning taking 3 variables (int voter [index of voter], int rank [rank that voter is voting on], and string name [name of candidate]). Returns bool if vote is valid or not
-void tabulate(void);                                                                        //declaration of function tabulate taking no value - takes global variables and returns no value but updates global variables. function allocates votes to each candidates in data struct
-bool print_winner(void);                                                                    //declaration of function print_winner taking no value takes and updates global variables and returns a bool *???*
-int find_min(void);                                                                         //declaration of function find_min taking no value taking no value *presumably to determine which candidate has the smallest number of first preference votes*
-bool is_tie(int min);                                                                       //declaration of functin is_tie taking int min variabls *not sure where from* *presumably to determine if there are ties is the minimums*
-void eliminate(int min);                                                                    //declaration of function eliminate taking int min variable *not sure where from* * presumably to eliminate the candidate that has the smallest first preference votes*
+bool vote(int voter, int rank, string name);
+void tabulate(void);
+bool print_winner(void);
+int find_min(void);
+bool is_tie(int min);
+void eliminate(int min);
 
-int main(int argc, string argv[])                                                           //declaration of main function. function takes 2 variables, int argc (number of terms in CLI) and string argv (name of the candidates written in CLI)
+int main(int argc, string argv[])
 {
     // Check for invalid usage
-    if (argc < 2)                                                                           //condition to check if argc is less than 2 (meaning only one candidate) - argc = 2 means name of program + name of one candidate
+    if (argc < 2)
     {
-        printf("Usage: runoff [candidate ...]\n");                                          //if above condition is met, print error message and return 1 to end the program
+        printf("Usage: runoff [candidate ...]\n");                                          
         return 1;
     }
 
@@ -164,12 +164,12 @@ void tabulate(void)                                                             
 
             if (candidates[a].eliminated == false)                              //if candidate a for voter i and preference j is still in the race
             {
-                candidates[a].votes++;
-                break;
-            }
-
+                candidates[a].votes++;                                          //number of notes for candidate a is incremented by 1
+                break;                                                          //VERY IMPORTANT STEP: function stops after the top preference has been tabulated otherwise every candidate will have all the preferences counted (not just the top one)
+            }                                                                   //by breaking, the function skips the inner loop (does not go to lower preference for same voter) and goes to the next voter
+                                                                                //if candidate is eliminated, j (preference) is incremented (ie next person on preference list of ballot for voter i) and that candidate a is checked for elimination (back to line165)
         }
-
+                                                                                //this model is counter intuitive as i and a refer to people (voter and candidate) while j refers to preference. it would have been more intuitive (at least to me) if i and j were voter and candidate
     }
 
     return;
