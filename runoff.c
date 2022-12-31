@@ -160,10 +160,12 @@ void tabulate(void)                                                             
     for (int i = 0; i < voter_count; i++)                                       //nested loops to go through all voters and all candidates
                                                                                 //outside loop cycles through all voters using counter i
     {
+        int k = 0;
+
         for (int j = 0; j < candidate_count; j++)                               //inside loop cycles through all candidates using counter j
 
         {
-            int k = 0;                                                            //for each looop that is run, total is incremented by 1 (again, not sure to be used in this function)
+                                                                     //for each looop that is run, total is incremented by 1 (again, not sure to be used in this function)
 
             if (candidates[j].eliminated == false)                              //condition to check is candidate has been eliminated. information is taken from data struct. in the first round, all candidates are still in the race. *presumably another function will update this global variable later
 
@@ -176,7 +178,7 @@ void tabulate(void)                                                             
                                                                                 //if vote from voter i does not correspond to candidate j, no global variabls is incremented
             }
 
-            else if (candidates[j].eliminated == true)                                                                //if candidate is eliminated
+            else if (candidates[j].eliminated == true)                          //if candidate is eliminated
 
             {
                 k++;                                                            //variable k is incremented so that the next preference on ballots with eliminated candidates set as higher preference is checked
