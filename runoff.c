@@ -154,44 +154,22 @@ void tabulate(void)                                                             
 {
     // TODO
 
-    int total = 0;                                                              //initialisation of int variable total to calculate total number of votes (voters * candidates) - will probably not use in this functin
-                                                                                //initialisation of int variable k = 0. k will be used to increment the preference in case a candidate is eliminated and the ballots with that candidate's top preference needs to be ignored
+    for (int i = 0; i < voter_count; i++)                                       //nested loops to run through all voter and preference combinations. outer loop cycles through voters using counter i
 
-    for (int i = 0; i < voter_count; i++)                                       //nested loops to go through all voters and all candidates
-                                                                                //outside loop cycles through all voters using counter i
     {
-        
-
-        for (int j = 0; j < candidate_count; j++)                               //inside loop cycles through all candidates using counter j
+        for (int j = 0; j < candidate_count; j++)                               //inner loop run through all preferences using counter j
 
         {
-            int k = 0;
+            int a = preferences[i][j];                                          //declaration of variable i that stores the candidate for each combination of voter and preference i.e. voter i has set it's preference j to be candidate a
 
-            if (candidates[j].eliminated == false)                              //condition to check is candidate has been eliminated. information is taken from data struct. in the first round, all candidates are still in the race. *presumably another function will update this global variable later
-
+            if (candidates[a].eliminated == false)                              //if candidate a for voter i and preference j is still in the race
             {
-                if (preferences[i][k] == j)                                     //if candidate still in race: if the vote for candidate preference k (initially 0 since all candidates still in the race) from voter i corresponds to candidate j,
-
-                {
-                    candidates[j].votes++;                                      //vote count for candidate j is incremented by 1
-                }
-                                                                                //if vote from voter i does not correspond to candidate j, no global variabls is incremented
+                candidates[a].votes++;
+                break;
             }
 
-            else if (candidates[j].eliminated == true)                          //if candidate is eliminated
-
-            {
-                k++;                                                            //variable k is incremented so that the next preference on ballots with eliminated candidates set as higher preference is checked
-
-                if (preferences[i][k] == j)                                     //if vote for candidate preference k (not 0 anymore since candidate has been eliminated at some point and k has been incremented) from voter i corresponds to candidate j
-
-                {
-                    candidates[j].votes++;                                      //vote count for candidate h is incremented by 1
-                }                                                               //if vote from voter i does not correspond to candidate j, no global variable is incremented
-            }
-                                                                                //internal loop goes to the next candidate
         }
-                                                                                //when top preference of voter is compared against each candidate, outer loop cycles to next voter
+
     }
 
     return;
