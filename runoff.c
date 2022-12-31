@@ -90,8 +90,8 @@ int main(int argc, string argv[])
         tabulate();
 
         // Check if election has been won
-    bool won = print_winner();
-    if (won)
+        bool won = print_winner();
+        if (won)
         {
             break;
         }
@@ -180,11 +180,11 @@ bool print_winner(void)
 {
     // TODO
 
-    for(int i = 0; i < candidate_count; i++)
+    for (int i = 0; i < candidate_count; i++)
 
     {
 
-        if (candidates[i].votes > voter_count/2)
+        if (candidates[i].votes > voter_count / 2)
 
         {
             printf("%s\n", candidates[i].name);
