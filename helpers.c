@@ -12,7 +12,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])           
 
         {
             int s = image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed;                     //declaration of int variable s which stores the average of the r, g and b values of each pixel [i][j]
-            float a = round(s/3);                                                                             //declaration of int variable a which rounds the value of s
+            float a = round(s/3.0);                                                                             //declaration of int variable a which rounds the value of s
 
             image[i][j].rgbtBlue = a;                                                                       //set the value of the blue pixel [i][j] to a
             image[i][j].rgbtGreen = a;                                                                      //set the value of the green pixel [i][j] to a
