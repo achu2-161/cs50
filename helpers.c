@@ -32,9 +32,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])               
         for (int j = 0; j < width; j++)                                                                                             //inner loop cycles through the various columns
 
         {
-            int s_b = round(image[i][j].rgbtBlue * 0.131 + image[i][j].rgbtGreen * 0.534 + image[i][j].rgbtRed * 0.272);            //declaration of int variable s_b to convert any original blue value of a pixel according to this sepia algorithm
-            int s_g = round(image[i][j].rgbtBlue * 0.168 + image[i][j].rgbtGreen * 0.686 + image[i][j].rgbtRed * 0.349);            //declaration of int variable s_g to convert any original green value of a pixel according to this sepia algorithm
-            int s_r = round(image[i][j].rgbtBlue * 0.189 + image[i][j].rgbtGreen * 0.769 + image[i][j].rgbtRed * 0.393);            //declaration of int variable s_r to convert any original red value of a pixel according to this sepia algorithm
+            float s_b = round(image[i][j].rgbtBlue * 0.131 + image[i][j].rgbtGreen * 0.534 + image[i][j].rgbtRed * 0.272);            //declaration of int variable s_b to convert any original blue value of a pixel according to this sepia algorithm
+            float s_g = round(image[i][j].rgbtBlue * 0.168 + image[i][j].rgbtGreen * 0.686 + image[i][j].rgbtRed * 0.349);            //declaration of int variable s_g to convert any original green value of a pixel according to this sepia algorithm
+            float s_r = round(image[i][j].rgbtBlue * 0.189 + image[i][j].rgbtGreen * 0.769 + image[i][j].rgbtRed * 0.393);            //declaration of int variable s_r to convert any original red value of a pixel according to this sepia algorithm
 
             if (s_b > 255)                                                                                                          //check if s_b is more than 255 (white)
 
@@ -159,7 +159,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             {
                 avg_blue = round((duplicate[j - 1][i].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j][i + 1].rgbtBlue)/4);
                 avg_green = round((duplicate[j - 1][i].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j - 1][i + 1].rgbtGreen + duplicate[j][i + 1].rgbtGreen)/4);
-                avg_red = round(((duplicate[j - 1][i].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j - 1][i + 1].rgbtRed + duplicate[j][i + 1].rgbtRed))/4);
+                avg_red = round((duplicate[j - 1][i].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j - 1][i + 1].rgbtRed + duplicate[j][i + 1].rgbtRed)/4);
 
 
             }
