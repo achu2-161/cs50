@@ -54,11 +54,15 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])               
                 s_r = 255;                                                                                                          //if s_r is greater than 255, define s_r as 255
             }
 
-            else                                                                                                                    //after all the checks have been made
+            else
+
+            {                                                                                                                 //after all the checks have been made
 
             image[i][j].rgbtBlue = s_b;                                                                                             //set blue value of pixel [i][j] as s_b
             image[i][j].rgbtGreen = s_g;                                                                                            //set green value of pixel[i][j] as s_g
-            image[i][j].rgbtRed = s_r;                                                                                              //set red value of pixel [i][j] as s_r
+            image[i][j].rgbtRed = s_r;
+
+            }                                                                                          //set red value of pixel [i][j] as s_r
         }
     }
 
