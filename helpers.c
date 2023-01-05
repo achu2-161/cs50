@@ -51,7 +51,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])               
             else if (s_r > 255)                                                                                                     //check if s_r is more than 255 (white)
 
             {
-                s_g = 255;                                                                                                          //if s_r is greater than 255, define s_r as 255
+                s_r = 255;                                                                                                          //if s_r is greater than 255, define s_r as 255
             }
 
             else                                                                                                                    //after all the checks have been made
