@@ -34,7 +34,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])               
         {
             float s_b = round(image[i][j].rgbtBlue * 0.131 + image[i][j].rgbtGreen * 0.534 + image[i][j].rgbtRed * 0.272);            //declaration of int variable s_b to convert any original blue value of a pixel according to this sepia algorithm
             float s_g = round(image[i][j].rgbtBlue * 0.168 + image[i][j].rgbtGreen * 0.686 + image[i][j].rgbtRed * 0.349);            //declaration of int variable s_g to convert any original green value of a pixel according to this sepia algorithm
-            float s_r = round(image[i][j].rgbtBlue * 0.189 + image[i][j].rgbtGreen * 0.729 + image[i][j].rgbtRed * 0.393);            //declaration of int variable s_r to convert any original red value of a pixel according to this sepia algorithm
+            float s_r = round(image[i][j].rgbtBlue * 0.189 + image[i][j].rgbtGreen * 0.769 + image[i][j].rgbtRed * 0.393);            //declaration of int variable s_r to convert any original red value of a pixel according to this sepia algorithm
 
             if (s_b > 255)                                                                                                          //check if s_b is more than 255 (white)
 
