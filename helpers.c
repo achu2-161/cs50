@@ -71,7 +71,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])             
 
 
 
-    for (int i = 0; i < width/2; i++)                                                                                                //2 loops to cycle through every pixel of the image
+    for (int i = 0; i < width/2 + 1; i++)                                                                                                //2 loops to cycle through every pixel of the image
 
     {                                                                                                                               //outer loop cycles through the various rows
 
