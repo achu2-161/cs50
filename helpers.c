@@ -71,11 +71,11 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])             
 
 
 
-    for (int j = 0; j < height; j++)                                                                                                //2 loops to cycle through every pixel of the image
+    for (int i = 0; i < width/2; i++)                                                                                                //2 loops to cycle through every pixel of the image
 
     {                                                                                                                               //outer loop cycles through the various rows
 
-        for (int i = 0; i < width; i++)                                                                                             //inner loop cycles through the various columns
+        for (int j = 0; j < height; j++)                                                                                             //inner loop cycles through the various columns
 
                                                                                                                                     //to swap 2 values eg a and b, a third temporary variable is needed
                                                                                                                                     //steps are: STEP 1: temporary is assigned value of a, STEP 2: a is assigned value of b, and STEP 3: b is assigned temperary value
