@@ -12,7 +12,7 @@ void grayscale(int height, int width, RGBTRIPLE image[height][width])           
 
         {
             int s = image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed;                     //declaration of int variable s which stores the average of the r, g and b values of each pixel [i][j]
-            int a = round(s/3);                                                                             //declaration of int variable a which rounds the value of s
+            float a = round(s/3);                                                                             //declaration of int variable a which rounds the value of s
 
             image[i][j].rgbtBlue = a;                                                                       //set the value of the blue pixel [i][j] to a
             image[i][j].rgbtGreen = a;                                                                      //set the value of the green pixel [i][j] to a
@@ -32,9 +32,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])               
         for (int j = 0; j < width; j++)                                                                                             //inner loop cycles through the various columns
 
         {
-            int s_b = round(image[i][j].rgbtBlue * 0.131 + image[i][j].rgbtGreen * 0.534 + image[i][j].rgbtRed * 0.272);            //declaration of int variable s_b to convert any original blue value of a pixel according to this sepia algorithm
-            int s_g = round(image[i][j].rgbtBlue * 0.168 + image[i][j].rgbtGreen * 0.686 + image[i][j].rgbtRed * 0.349);            //declaration of int variable s_g to convert any original green value of a pixel according to this sepia algorithm
-            int s_r = round(image[i][j].rgbtBlue * 0.189 + image[i][j].rgbtGreen * 0.729 + image[i][j].rgbtRed * 0.393);            //declaration of int variable s_r to convert any original red value of a pixel according to this sepia algorithm
+            float s_b = round(image[i][j].rgbtBlue * 0.131 + image[i][j].rgbtGreen * 0.534 + image[i][j].rgbtRed * 0.272);            //declaration of int variable s_b to convert any original blue value of a pixel according to this sepia algorithm
+            float s_g = round(image[i][j].rgbtBlue * 0.168 + image[i][j].rgbtGreen * 0.686 + image[i][j].rgbtRed * 0.349);            //declaration of int variable s_g to convert any original green value of a pixel according to this sepia algorithm
+            float s_r = round(image[i][j].rgbtBlue * 0.189 + image[i][j].rgbtGreen * 0.729 + image[i][j].rgbtRed * 0.393);            //declaration of int variable s_r to convert any original red value of a pixel according to this sepia algorithm
 
             if (s_b > 255)                                                                                                          //check if s_b is more than 255 (white)
 
