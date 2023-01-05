@@ -56,13 +56,14 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])               
 
             else
 
-            {                                                                                                                 //after all the checks have been made
+            {                                                                                                                             //after all the checks have been made
 
             image[i][j].rgbtBlue = s_b;                                                                                             //set blue value of pixel [i][j] as s_b
             image[i][j].rgbtGreen = s_g;                                                                                            //set green value of pixel[i][j] as s_g
             image[i][j].rgbtRed = s_r;
 
-            }                                                                                          //set red value of pixel [i][j] as s_r
+            }
+                                                                                                     //set red value of pixel [i][j] as s_r
         }
     }
 
@@ -139,96 +140,114 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             int avg_red = 0;
 
             if (i - 1 < 0 || j - 1 < 0)
+            // 1 - efhi
 
             {
-                avg_blue = round((duplicate[j][i].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/4);
-                avg_green = round((duplicate[j][i].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/4);
-                avg_red = round((duplicate[j][i].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/4);
+                avg_blue = round((duplicate[j][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/4);
+                avg_green = round((duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/4);
+                avg_red = round((duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/4);
 
 
             }
 
-            else if (i - 1 < 0 || 0 < j < width)
+            else if (j - 1 < 0 || 0 < i < width)
+            // 2 - defghi
 
             {
-                avg_blue = round((duplicate[j - 1][i].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j][i + 1].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/6);
-                avg_green = round((duplicate[j - 1][i].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j - 1][i + 1].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/6);
-                avg_red = round((duplicate[j - 1][i].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j - 1][i + 1].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/6);
+                avg_blue = round((duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/6);
+                avg_green = round((duplicate[j][i - 1].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/6);
+                avg_red = round((duplicate[j][i - 1].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/6);
 
 
             }
 
-            else if (i - 1 < 0 || j + 1 > width)
+            else if (j - 1 < 0 || i + 1 > width)
+            // 3 - degh
 
             {
-                avg_blue = round((duplicate[j - 1][i].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j][i + 1].rgbtBlue)/4);
-                avg_green = round((duplicate[j - 1][i].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j - 1][i + 1].rgbtGreen + duplicate[j][i + 1].rgbtGreen)/4);
-                avg_red = round((duplicate[j - 1][i].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j - 1][i + 1].rgbtRed + duplicate[j][i + 1].rgbtRed)/4);
+                avg_blue = round((duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j + 1][i].rgbtBlue)/4);
+                avg_green = round((duplicate[j][i - 1].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j + 1][i].rgbtGreen)/4);
+                avg_red = round((duplicate[j][i - 1].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j + 1][i].rgbtRed)/4);
 
 
             }
 
-            else if (0 < i < width || j - 1 < 0)
+            else if (0 < j < height || i - 1 < 0)
+            // 4 - bcefhi
+
 
             {
-                avg_blue = round((duplicate[j][i].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/4);
-                avg_green = round((duplicate[j][i].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j - 1][i + 1].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/4);
-                avg_red = round((duplicate[j][i].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j - 1][i + 1].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/4);
+                avg_blue = round((duplicate[j - 1][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/6);
+                avg_green = round((duplicate[j - 1][i].rgbtGreen + duplicate[j - 1][i + 1].rgbtGreen +duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/6);
+                avg_red = round((duplicate[j - 1][i].rgbtRed + duplicate[j - 1][i + 1].rgbtRed +duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/6);
 
 
             }
 
-            else if (0 < i < width || j + 1 > width)
+            else if (0 < j < height || i + 1 > width)
+            // 6 - abdegh
 
             {
-                avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j][i + 1].rgbtBlue)/6);
-                avg_green = round((duplicate[j - 1][i - 1].rgbtGreen + duplicate[j][i - 1].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j - 1][i + 1].rgbtGreen + duplicate[j][i + 1].rgbtGreen)/6);
-                avg_red = round((duplicate[j - 1][i - 1].rgbtRed + duplicate[j][i - 1].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j - 1][i + 1].rgbtRed + duplicate[j][i + 1].rgbtRed)/6);
-
+                avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j + 1][i].rgbtBlue)/6);
+                avg_green = round((duplicate[j - 1][i - 1].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j][i - 1].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j + 1][i].rgbtGreen)/6);
+                avg_red = round((duplicate[j - 1][i - 1].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j][i - 1].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j + 1][i].rgbtRed)/6);
 
 
             }
 
-            else if (i + 1 > height || j - 1 < 0)
+            else if (j + 1 > height || 1 - 1 < 0)
+            // 7 - bcef
+
 
             {
-                avg_blue = round((duplicate[j][i].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/4);
-                avg_green = round((duplicate[j][i].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/4);
-                avg_red = round((duplicate[j][i].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/4);
-
+                avg_blue = round((duplicate[j - 1][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue)/4);
+                avg_green = round((duplicate[j - 1][i].rgbtGreen + duplicate[j - 1][i + 1].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen)/4);
+                avg_red = round((duplicate[j - 1][i].rgbtRed + duplicate[j - 1][i + 1].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed)/4);
 
 
             }
 
-            else if (i + 1 > height || 0 < j < width)
+            else if (j + 1 > height || 0 < i < width)
+            // 8 - abcdef
 
 
             {
-                avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j + 1][i].rgbtBlue)/6);
-                avg_green = round((duplicate[j - 1][i - 1].rgbtGreen + duplicate[j][i - 1].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j + 1][i].rgbtGreen)/6);
-                avg_red = round((duplicate[j - 1][i - 1].rgbtRed + duplicate[j][i - 1].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j + 1][i].rgbtRed)/6);
-
+                avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue)/6);
+                avg_green = round((duplicate[j - 1][i - 1].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j][i - 1].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen)/6);
+                avg_red = round((duplicate[j - 1][i - 1].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j][i - 1].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed)/6);
 
 
             }
 
-            else if (i + 1 > height || i + 1 > width)
+
+            else if (j + 1 > height || i + 1 > width)
+            // 9 - abde
+
+            //int a_blue = duplicate[j - 1][i - 1].rgbtBlue;
+            //int b_blue = duplicate[j][i - 1].rgbtBlue;
+            //int c_blue = duplicate[j + 1][i - 1].rgbtBlue;
+            //int d_blue = duplicate[j - 1][i].rgbtBlue;
+            //int e_blue = duplicate[j][i].rgbtBlue;
+            //int f_blue = duplicate[j + 1][i].rgbtBlue;
+            //int g_blue = duplicate[j - 1][i + 1].rgbtBlue;
+            //int h_blue = duplicate[j][i + 1].rgbtBlue;
+            //int i_blue = duplicate[j + 1][i + 1].rgbtBlue;
 
             {
-                avg_blue = round((duplicate[j - 1][i].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j][i + 1].rgbtBlue)/4);
-                avg_green = round((duplicate[j - 1][i].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j - 1][i + 1].rgbtGreen + duplicate[j][i + 1].rgbtGreen)/4);
-                avg_red = round((duplicate[j - 1][i].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j - 1][i + 1].rgbtRed + duplicate[j][i + 1].rgbtRed)/4);
-
+                avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue)/4);
+                avg_green = round((duplicate[j - 1][i - 1].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j][i - 1].rgbtGreen + duplicate[j][i].rgbtGreen)/4);
+                avg_red = round((duplicate[j - 1][i - 1].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j][i - 1].rgbtRed + duplicate[j][i].rgbtRed)/4);
 
 
             }
 
-            else
+            else if (0 < i < height || 0 < i < width)
+            // 5 - abcdefghi
 
             {
-                avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j][i + 1].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/9);
-                avg_green = round((duplicate[j - 1][i - 1].rgbtGreen + duplicate[j][i - 1].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j - 1][i + 1].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/9);
-                avg_red = round((duplicate[j - 1][i - 1].rgbtRed + duplicate[j][i - 1].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j - 1][i + 1].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/9);
+                avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/9);
+                avg_green = round((duplicate[j - 1][i - 1].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j][i - 1].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/9);
+                avg_red = round((duplicate[j - 1][i - 1].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j][i - 1].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/9);
 
             }
 
