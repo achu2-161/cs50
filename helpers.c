@@ -71,7 +71,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])             
 
 
 
-    for (int i = 0; i < width/2 + 1; i++)                                                                                                //2 loops to cycle through every pixel of the image
+    for (int i = 0; i < width/2; i++)                                                                                                //2 loops to cycle through every pixel of the image
 
     {                                                                                                                               //outer loop cycles through the various rows
 
@@ -89,13 +89,13 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])             
             int i_swap = round(width - i);                                                                                          //declaration of int variable i_swap as width - i (used to reference the the reflected position at any position i) - ended up being unused
 
 
-            image[j][i].rgbtBlue = image[j][width - i].rgbtBlue;                                                                    //this block (lines 92 - 94) assigns the value of b to a to a for each of pixel [j][i] (STEP 2)
-            image[j][i].rgbtGreen = image[j][width - i].rgbtGreen;                                                                  //this step is repeated for each of the r, g and b values of each pixel
-            image[j][i].rgbtRed = image[j][width - i].rgbtRed;
+            image[j][i].rgbtBlue = image[j][width - i - 1].rgbtBlue;                                                                    //this block (lines 92 - 94) assigns the value of b to a to a for each of pixel [j][i] (STEP 2)
+            image[j][i].rgbtGreen = image[j][width - i - 1].rgbtGreen;                                                                  //this step is repeated for each of the r, g and b values of each pixel
+            image[j][i].rgbtRed = image[j][width - i - 1].rgbtRed;
 
-            image[j][width - i].rgbtBlue = temp_b;                                                                                  //this block (lines 96 - 98) assigns the value of temp_ to b for each of the pixel [j][i] (STEP 3)
-            image[j][width - i].rgbtGreen = temp_g;                                                                                 //this step is repeated for each of the r, g and b values of each pixel
-            image[j][width - i].rgbtRed = temp_r;
+            image[j][width - i - 1].rgbtBlue = temp_b;                                                                                  //this block (lines 96 - 98) assigns the value of temp_ to b for each of the pixel [j][i] (STEP 3)
+            image[j][width - i - 1].rgbtGreen = temp_g;                                                                                 //this step is repeated for each of the r, g and b values of each pixel
+            image[j][width - i - 1].rgbtRed = temp_r;
 
         }
 
