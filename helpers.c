@@ -146,9 +146,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
         {
 
-            int avg_blue = 0;
-            int avg_green = 0;
-            int avg_red = 0;
+            float avg_blue = 0;
+            float avg_green = 0;
+            float avg_red = 0;
 
             if (i == 0 && j == 0)
             // 1 - efhi
@@ -158,10 +158,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
                 avg_green = round((duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/4);
                 avg_red = round((duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/4);
 
-
             }
 
-            else if (j == 0 && 0 < i < width)
+
+            else if (j == 0 && 0 < i < width - 1)
             // 2 - defghi
 
             {
@@ -169,10 +169,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
                 avg_green = round((duplicate[j][i - 1].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/6);
                 avg_red = round((duplicate[j][i - 1].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/6);
 
-
             }
 
-            else if (j == 0 && i == width)
+            else if (j == 0 && i == width - 1)
             // 3 - degh
 
             {
@@ -183,7 +182,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (0 < j < height && i == 0)
+            else if (0 < j < height - 1 && i == 0)
             // 4 - bcefhi
 
 
@@ -195,7 +194,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (0 < j < height && i == width)
+            else if (0 < j < height - 1 && i == width - 1)
             // 6 - abdegh
 
             {
@@ -206,7 +205,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (j == height && i == 0)
+            else if (j == height - 1 && i == 0)
             // 7 - bcef
 
 
@@ -218,7 +217,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (j == height && 0 < i < width)
+            else if (j == height - 1 && (i > 0 && i < width - 1))
             // 8 - abcdef
 
 
@@ -231,7 +230,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             }
 
 
-            else if (j == height && i == width)
+            else if (j == height - 1 && i == width - 1)
             // 9 - abde
 
 
@@ -243,7 +242,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (0 < i < height && 0 < i < width)
+            else if (0 < i < height - 1 && 0 < i < width - 1)
             // 5 - abcdefghi
 
             {
@@ -251,14 +250,16 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
                 avg_green = round((duplicate[j - 1][i - 1].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j][i - 1].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/9);
                 avg_red = round((duplicate[j - 1][i - 1].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j][i - 1].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/9);
 
+
             }
 
+            int avg_blue_i = avg_blue;
+            int avg_green_i = avg_green;
+            int avg_red_i = avg_red;
 
-
-            image[j][i].rgbtBlue = avg_blue;
-            image[j][i].rgbtGreen = avg_green;
-            image[j][i].rgbtRed = avg_red;
-
+            image[j][i].rgbtBlue = avg_blue_i;
+            image[j][i].rgbtGreen = avg_green_i;
+            image[j][i].rgbtRed = avg_red_i;
 
         }
     }
