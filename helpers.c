@@ -150,7 +150,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             int avg_green = 0;
             int avg_red = 0;
 
-            if (i - 1 < 0 || j - 1 < 0)
+            if (i - 1 < 0 && j - 1 < 0)
             // 1 - efhi
 
             {
@@ -161,7 +161,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (j - 1 < 0 || 0 < i < width)
+            else if (j - 1 < 0 && 0 < i < width)
             // 2 - defghi
 
             {
@@ -172,7 +172,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (j - 1 < 0 || i + 1 > width)
+            else if (j - 1 < 0 && i + 1 > width)
             // 3 - degh
 
             {
@@ -183,7 +183,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (0 < j < height || i - 1 < 0)
+            else if (0 < j < height && i - 1 < 0)
             // 4 - bcefhi
 
 
@@ -195,7 +195,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (0 < j < height || i == width - 1)
+            else if (0 < j < height && i + 1 > width)
             // 6 - abdegh
 
             {
@@ -206,7 +206,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (j + 1 > height || 1 - 1 < 0)
+            else if (j + 1 > height && 1 - 1 < 0)
             // 7 - bcef
 
 
@@ -218,7 +218,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (j + 1 > height || 0 < i < width)
+            else if (j + 1 > height && 0 < i < width)
             // 8 - abcdef
 
 
@@ -231,7 +231,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             }
 
 
-            else if (j + 1 > height || i + 1 > width)
+            else if (j + 1 > height && i + 1 > width)
             // 9 - abde
 
 
@@ -243,7 +243,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (0 < i < height || 0 < i < width)
+            else if (0 < i < height && 0 < i < width)
             // 5 - abcdefghi
 
             {
@@ -253,9 +253,15 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            image[j][i].rgbtBlue = avg_blue;
-            image[j][i].rgbtGreen = avg_green;
-            image[j][i].rgbtRed = avg_red;
+            else
+
+            {
+                image[j][i].rgbtBlue = avg_blue;
+                image[j][i].rgbtGreen = avg_green;
+                image[j][i].rgbtRed = avg_red;
+            }
+
+
 
 
         }
