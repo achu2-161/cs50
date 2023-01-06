@@ -150,13 +150,13 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             float avg_green = 0;
             float avg_red = 0;
 
-            //for the following, abcdefghi gris is represented as follows:
+            //for the following, abcdefghi is a box represented the pixels around pixel [j][i]. the grid is represented as follows:
 
             // a b c
             // d e f
             // g h i
 
-            if (i == 0 && j == 0)
+            if (j == 0 && i == 0)
             // 1 - efhi (top left corner)
 
             {
@@ -188,7 +188,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if ((0 < j && j < height - 1) && i == 0)
+            else if ((j > 0 && j < height - 1) && i == 0)
             // 4 - bcefhi (left column)
 
 
@@ -200,7 +200,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if ((0 < j && j < height - 1) && i == width - 1)
+            else if ((j > 0 && j < height - 1) && i == width - 1)
             // 6 - abdegh (right column)
 
             {
@@ -248,7 +248,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if ((0 < i && i < height - 1) && (0 < i && i < width - 1))
+            else if ((j > 0 && j < height - 1) && (i > 0 && i < width - 1))
             // 5 - abcdefghi (internal pixels)
 
             {
