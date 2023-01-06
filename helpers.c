@@ -253,15 +253,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else
 
 
             image[j][i].rgbtBlue = avg_blue;
             image[j][i].rgbtGreen = avg_green;
             image[j][i].rgbtRed = avg_red;
-
-
-
 
 
         }
