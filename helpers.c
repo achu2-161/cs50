@@ -46,10 +46,21 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])               
                 image[i][j].rgbtBlue = 255;                                                                                                          //if s_b is greater than 255, define s_b as 255
             }
 
+            else
+
+            {
+                image[i][j].rgbtBlue = s_bi;
+            }
+
             if (s_gi > 255)                                                                                                     //check if s_g is more than 255 (white)
 
             {
                 image[i][j].rgbtGreen = 255;                                                                                                          //if s_g is greater than 255, define s_g as 255
+            }
+
+            else
+            {
+                image[i][j].rgbtGreen = s_gi;
             }
 
             if (s_ri > 255)                                                                                                     //check if s_r is more than 255 (white)
@@ -57,16 +68,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])               
             {
                 image[i][j].rgbtRed = 255;                                                                                                          //if s_r is greater than 255, define s_r as 255
             }
-
-
             else
-
             {
-
-            image[i][j].rgbtBlue = s_bi;                                                                                             //set blue value of pixel [i][j] as s_b
-            image[i][j].rgbtGreen = s_gi;                                                                                            //set green value of pixel[i][j] as s_g
-            image[i][j].rgbtRed = s_ri;
-
+                image[i][j].rgbtRed = s_ri;
             }
 
 
