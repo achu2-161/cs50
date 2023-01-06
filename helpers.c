@@ -125,7 +125,11 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])             
 void blur(int height, int width, RGBTRIPLE image[height][width])                                            //definition of function blur taking arguments int height, int width and datatype RGBTRILE array image (array defined by height and width)
 {
 
-    RGBTRIPLE duplicate[height][width];                                                                     //creation of another array called duplicate of type RGBTRIPLE. This array will duplicate any image being processed
+    RGBTRIPLE duplicate[height][width];
+
+    float avg_blue;
+    float avg_green;
+            float avg_red;                                                                  //creation of another array called duplicate of type RGBTRIPLE. This array will duplicate any image being processed
 
     for (int i = 0; i < width; i++)                                                                        //2 nested loops to cycle through all the pixels
                                                                                                             //outer loop to cycle through rows using i as counter
@@ -146,9 +150,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
         {
 
-            float avg_blue = 0;
-            float avg_green = 0;
-            float avg_red = 0;
+
 
             //for the following, abcdefghi is a box represented the pixels around pixel [j][i]. the grid is represented as follows:
 
