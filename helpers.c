@@ -150,6 +150,12 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             float avg_green = 0;
             float avg_red = 0;
 
+            //for the following, abcdefghi gris is represented as follows:
+
+            // a b c
+            // d e f
+            // g h i
+
             if (i == 0 && j == 0)
             // 1 - efhi
 
@@ -171,7 +177,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (j == 0 && i == (width - 1))
+            else if (j == 0 && i == width - 1)
             // 3 - degh
 
             {
