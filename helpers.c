@@ -161,7 +161,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             }
 
 
-            else if (j == 0 && 0 < i < width - 1)
+            else if (j == 0 && (0 < i && i < width - 1))
             // 2 - defghi
 
             {
@@ -171,7 +171,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (j == 0 && i == width - 1)
+            else if (j == 0 && i == (width - 1))
             // 3 - degh
 
             {
@@ -182,7 +182,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (0 < j < height - 1 && i == 0)
+            else if ((0 < j && j < height - 1) && i == 0)
             // 4 - bcefhi
 
 
@@ -194,7 +194,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (0 < j < height - 1 && i == width - 1)
+            else if ((0 < j && j< height - 1) && i == width - 1)
             // 6 - abdegh
 
             {
@@ -222,9 +222,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
 
             {
-                avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue)/6);
-                avg_green = round((duplicate[j - 1][i - 1].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j][i - 1].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen)/6);
-                avg_red = round((duplicate[j - 1][i - 1].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j][i - 1].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed)/6);
+                avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue)/6);
+                avg_green = round((duplicate[j - 1][i - 1].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j - 1][i + 1].rgbtGreen + duplicate[j][i - 1].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen)/6);
+                avg_red = round((duplicate[j - 1][i - 1].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j - 1][i + 1].rgbtRed + duplicate[j][i - 1].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed)/6);
 
 
             }
