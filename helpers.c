@@ -32,37 +32,44 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])               
         for (int j = 0; j < width; j++)                                                                                             //inner loop cycles through the various columns
 
         {
-            float s_b = round(image[i][j].rgbtBlue * 0.131 + image[i][j].rgbtGreen * 0.534 + image[i][j].rgbtRed * 0.272);            //declaration of int variable s_b to convert any original blue value of a pixel according to this sepia algorithm
-            float s_g = round(image[i][j].rgbtBlue * 0.168 + image[i][j].rgbtGreen * 0.686 + image[i][j].rgbtRed * 0.349);            //declaration of int variable s_g to convert any original green value of a pixel according to this sepia algorithm
-            float s_r = round(image[i][j].rgbtBlue * 0.189 + image[i][j].rgbtGreen * 0.769 + image[i][j].rgbtRed * 0.393);            //declaration of int variable s_r to convert any original red value of a pixel according to this sepia algorithm
+            float s_b = (image[i][j].rgbtBlue * 0.131 + image[i][j].rgbtGreen * 0.534 + image[i][j].rgbtRed * 0.272);            //declaration of int variable s_b to convert any original blue value of a pixel according to this sepia algorithm
+            float s_g = (image[i][j].rgbtBlue * 0.168 + image[i][j].rgbtGreen * 0.686 + image[i][j].rgbtRed * 0.349);            //declaration of int variable s_g to convert any original green value of a pixel according to this sepia algorithm
+            float s_r = (image[i][j].rgbtBlue * 0.189 + image[i][j].rgbtGreen * 0.769 + image[i][j].rgbtRed * 0.393);            //declaration of int variable s_r to convert any original red value of a pixel according to this sepia algorithm
 
-            if (s_b > 255)                                                                                                          //check if s_b is more than 255 (white)
+            int s_bi = round(s_b);
+            int s_gi = round(s_g);
+            int s_ri = round(s_r);
 
-            {
-                s_b = 255;                                                                                                          //if s_b is greater than 255, define s_b as 255
-            }
-
-            else if (s_g > 255)                                                                                                     //check if s_g is more than 255 (white)
+            if (s_bi > 255)                                                                                                          //check if s_b is more than 255 (white)
 
             {
-                s_g = 255;                                                                                                          //if s_g is greater than 255, define s_g as 255
+                image[i][j].rgbtBlue = 255;                                                                                                          //if s_b is greater than 255, define s_b as 255
             }
 
-            else if (s_r > 255)                                                                                                     //check if s_r is more than 255 (white)
+            if (s_gi > 255)                                                                                                     //check if s_g is more than 255 (white)
 
             {
-                s_r = 255;                                                                                                          //if s_r is greater than 255, define s_r as 255
+                image[i][j].rgbtGreen = 255;                                                                                                          //if s_g is greater than 255, define s_g as 255
             }
+
+            if (s_ri > 255)                                                                                                     //check if s_r is more than 255 (white)
+
+            {
+                image[i][j].rgbtRed = 255;                                                                                                          //if s_r is greater than 255, define s_r as 255
+            }
+
 
             else
 
-            {                                                                                                                             //after all the checks have been made
+            {
 
-            image[i][j].rgbtBlue = s_b;                                                                                             //set blue value of pixel [i][j] as s_b
-            image[i][j].rgbtGreen = s_g;                                                                                            //set green value of pixel[i][j] as s_g
-            image[i][j].rgbtRed = s_r;
+            image[i][j].rgbtBlue = s_bi;                                                                                             //set blue value of pixel [i][j] as s_b
+            image[i][j].rgbtGreen = s_gi;                                                                                            //set green value of pixel[i][j] as s_g
+            image[i][j].rgbtRed = s_ri;
 
             }
+
+
                                                                                                      //set red value of pixel [i][j] as s_r
         }
     }
@@ -184,7 +191,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (0 < j < height || i + 1 > width)
+            else if (0 < j < height || i == width - 1)
             // 6 - abdegh
 
             {
@@ -223,15 +230,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             else if (j + 1 > height || i + 1 > width)
             // 9 - abde
 
-            //int a_blue = duplicate[j - 1][i - 1].rgbtBlue;
-            //int b_blue = duplicate[j][i - 1].rgbtBlue;
-            //int c_blue = duplicate[j + 1][i - 1].rgbtBlue;
-            //int d_blue = duplicate[j - 1][i].rgbtBlue;
-            //int e_blue = duplicate[j][i].rgbtBlue;
-            //int f_blue = duplicate[j + 1][i].rgbtBlue;
-            //int g_blue = duplicate[j - 1][i + 1].rgbtBlue;
-            //int h_blue = duplicate[j][i + 1].rgbtBlue;
-            //int i_blue = duplicate[j + 1][i + 1].rgbtBlue;
 
             {
                 avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue)/4);
