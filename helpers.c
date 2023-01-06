@@ -157,7 +157,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             // g h i
 
             if (i == 0 && j == 0)
-            // 1 - efhi
+            // 1 - efhi (top left corner)
 
             {
                 avg_blue = round((duplicate[j][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/4);
@@ -168,7 +168,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
 
             else if (j == 0 && (0 < i && i < width - 1))
-            // 2 - defghi
+            // 2 - defghi (top row)
 
             {
                 avg_blue = round((duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/6);
@@ -178,7 +178,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             }
 
             else if (j == 0 && i == width - 1)
-            // 3 - degh
+            // 3 - degh (top right corner)
 
             {
                 avg_blue = round((duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j + 1][i].rgbtBlue)/4);
@@ -189,7 +189,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             }
 
             else if ((0 < j && j < height - 1) && i == 0)
-            // 4 - bcefhi
+            // 4 - bcefhi (left column)
 
 
             {
@@ -201,7 +201,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             }
 
             else if ((0 < j && j < height - 1) && i == width - 1)
-            // 6 - abdegh
+            // 6 - abdegh (right column)
 
             {
                 avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j + 1][i].rgbtBlue)/6);
@@ -212,7 +212,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             }
 
             else if (j == height - 1 && i == 0)
-            // 7 - bcef
+            // 7 - bcef (bottom left corner)
 
 
             {
@@ -224,7 +224,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             }
 
             else if (j == height - 1 && (i > 0 && i < width - 1))
-            // 8 - abcdef
+            // 8 - abcdef (bottom row)
 
 
             {
@@ -237,7 +237,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
 
             else if (j == height - 1 && i == width - 1)
-            // 9 - abde
+            // 9 - abde (bottom right corner)
 
 
             {
@@ -248,8 +248,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (0 < i < height - 1 && 0 < i < width - 1)
-            // 5 - abcdefghi
+            else if ((0 < i && i < height - 1) && (0 < i && i < width - 1))
+            // 5 - abcdefghi (internal pixels)
 
             {
                 avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/9);
