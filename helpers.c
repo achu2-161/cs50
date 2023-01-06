@@ -194,7 +194,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if ((0 < j && j< height - 1) && i == width - 1)
+            else if ((0 < j && j < height - 1) && i == width - 1)
             // 6 - abdegh
 
             {
@@ -247,8 +247,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             {
                 avg_blue = round((duplicate[j - 1][i - 1].rgbtBlue + duplicate[j - 1][i].rgbtBlue + duplicate[j - 1][i + 1].rgbtBlue + duplicate[j][i - 1].rgbtBlue + duplicate[j][i].rgbtBlue + duplicate[j][i + 1].rgbtBlue + duplicate[j + 1][i - 1].rgbtBlue + duplicate[j + 1][i].rgbtBlue + duplicate[j + 1][i + 1].rgbtBlue)/9);
-                avg_green = round((duplicate[j - 1][i - 1].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j][i - 1].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/9);
-                avg_red = round((duplicate[j - 1][i - 1].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j][i - 1].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/9);
+                avg_green = round((duplicate[j - 1][i - 1].rgbtGreen + duplicate[j - 1][i].rgbtGreen + duplicate[j - 1][i + 1].rgbtGreen + duplicate[j][i - 1].rgbtGreen + duplicate[j][i].rgbtGreen + duplicate[j][i + 1].rgbtGreen + duplicate[j + 1][i - 1].rgbtGreen + duplicate[j + 1][i].rgbtGreen + duplicate[j + 1][i + 1].rgbtGreen)/9);
+                avg_red = round((duplicate[j - 1][i - 1].rgbtRed + duplicate[j - 1][i].rgbtRed + duplicate[j - 1][i + 1].rgbtRed + duplicate[j][i - 1].rgbtRed + duplicate[j][i].rgbtRed + duplicate[j][i + 1].rgbtRed + duplicate[j + 1][i - 1].rgbtRed + duplicate[j + 1][i].rgbtRed + duplicate[j + 1][i + 1].rgbtRed)/9);
 
 
             }
