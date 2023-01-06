@@ -167,7 +167,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             }
 
 
-            else if (j == 0 && (0 < i && i < width - 1))
+            else if (j == 0 && (0 < i && i < width ))
             // 2 - defghi (top row)
 
             {
@@ -177,7 +177,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (j == 0 && i == width - 1)
+            else if (j == 0 && i == width )
             // 3 - degh (top right corner)
 
             {
@@ -188,7 +188,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if ((j > 0 && j < height - 1) && i == 0)
+            else if ((j > 0 && j < height ) && i == 0)
             // 4 - bcefhi (left column)
 
 
@@ -200,7 +200,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if ((j > 0 && j < height - 1) && i == width - 1)
+            else if ((j > 0 && j < height ) && i == width )
             // 6 - abdegh (right column)
 
             {
@@ -223,7 +223,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if (j == height - 1 && (i > 0 && i < width - 1))
+            else if (j == height  && (i > 0 && i < width ))
             // 8 - abcdef (bottom row)
 
 
@@ -236,7 +236,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
             }
 
 
-            else if (j == height - 1 && i == width - 1)
+            else if (j == height - 1 && i == width )
             // 9 - abde (bottom right corner)
 
 
@@ -248,7 +248,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])                
 
             }
 
-            else if ((j > 0 && j < height - 1) && (i > 0 && i < width - 1))
+            else if ((j > 0 && j < height ) && (i > 0 && i < width ))
             // 5 - abcdefghi (internal pixels)
 
             {
