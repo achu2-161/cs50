@@ -52,6 +52,7 @@ int main(int argc, char *argv[])
             }
         }
 
+        fclose(card);
     }
 
     //copy data block to buffer
