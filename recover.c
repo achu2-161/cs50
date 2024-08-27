@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
     FILE *img = NULL;                               //*img is a pointer that points to a file. initialised to point at nothing
 
-    //while there is still data on memory card, keep reading card
+    //while there is still data on memory card, keep reading card. once there are no more 512byte blocks, it's reached the end of the card
 
     while (fread(buffer, 1, BUFFER_SIZE, card) == BUFFER_SIZE)
 
@@ -38,12 +38,7 @@ int main(int argc, char *argv[])
             {
             //check that a file is already open
 
-            if (img != NULL)
-
-            {
-                fclose(img);
-
-            }
+         
 
             sprintf(filename, "%03i.jpg", i);           //create a file with name xxx.jpg
             img = fopen(filename, "w");
