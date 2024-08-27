@@ -1,9 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include <cs50.h>
-#define BUFFER_SIZE 512
-#define FILENAME_SIZE 8
+#define BUFFER_SIZE 512                         //define buffer size to 512 bytes
+#define FILENAME_SIZE 8                         //define size of string to 8 bytes
 
 int main(int argc, char *argv[])
 {
@@ -22,7 +21,7 @@ int main(int argc, char *argv[])
     //create a buffer for a block of data
 
     uint8_t buffer[BUFFER_SIZE];
-    string filename = NULL;
+    char filename[FILENAME_SIZE];
     int i = 0;
 
     FILE *img = NULL;                               //*img is a pointer that points to a file. initialised to point at nothing
@@ -62,18 +61,18 @@ int main(int argc, char *argv[])
             fwrite(buffer, 1, BUFFER_SIZE, img);        //if file is already open, start writing to file from buffer
         }
 
-    }
+    }                                                   //close while loop when card at the end
 
-    if (img != NULL)
+    if (img != NULL)                                    //if any images are still open, close them
 
     {
         fclose(img);
     }
 
-    fclose(card);
+    fclose(card);                                       //close card
     return 0;
 
-    }
+    }                                                   //end main function
 
 
 
