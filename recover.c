@@ -20,9 +20,9 @@ int main(int argc, char *argv[])
 
     //create a buffer for a block of data
 
-    uint8_t buffer[BUFFER_SIZE];
-    char filename[FILENAME_SIZE];
-    int i = 0;
+    uint8_t buffer[BUFFER_SIZE];                    //ceate an unsigned integer for the buffer
+    char filename[FILENAME_SIZE];                   //create an array of characters to store name of file
+    int i = 0;                                      //create an integer to keep track of number of files
 
     FILE *img = NULL;                               //*img is a pointer that points to a file. initialised to point at nothing
 
@@ -36,7 +36,6 @@ int main(int argc, char *argv[])
         if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
 
             {
-            //check that a file is already open
 
             if (img != NULL)                //check if file is already open
 
@@ -45,7 +44,7 @@ int main(int argc, char *argv[])
 
             }
 
-            sprintf(filename, "%03i.jpg", i);           //create a file with name xxx.jpg
+            sprintf(filename, "%03i.jpg", i);           //create a file with name xxx.jpg based on the value of i
             img = fopen(filename, "w");                 //open the file with current file name (based on i)
             i++;                                        //increase the value of i for the next file
 
