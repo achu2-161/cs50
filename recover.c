@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include <cs50.h>
 #define BUFFER_SIZE 512
 #define FILENAME_SIZE 8
 
@@ -22,7 +21,7 @@ int main(int argc, char *argv[])
     //create a buffer for a block of data
 
     uint8_t buffer[BUFFER_SIZE];
-    string filename = NULL;
+    char* filename = NULL;
     int i = 0;
 
     FILE *img = NULL;                               //*img is a pointer that points to a file. initialised to point at nothing
