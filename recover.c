@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
             {
             //check that a file is already open
 
-            if (img != NULL);
+            if (img != NULL)
 
             {
                 fclose(img);
@@ -56,17 +56,17 @@ int main(int argc, char *argv[])
 
         //check if file is already open
 
-        if(img != NULL);
+        if(img != NULL)
 
         {
-            img = fwrite(buffer, BUFFER_SIZE, 1, img)
+            fwrite(buffer, BUFFER_SIZE, 1, img);
         }
 
 
     }
 
     fclose(card);
-    
+
     }
 
 
