@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
     //create a buffer for a block of data
 
     uint8_t buffer[BUFFER_SIZE];
-    char* filename = NULL;
+    char filename[FILENAME_SIZE];
     int i = 0;
 
     FILE *img = NULL;                               //*img is a pointer that points to a file. initialised to point at nothing
