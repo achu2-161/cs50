@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
     //while there is still data on memory card, keep reading card
 
-    while (fread(buffer, 1, BUFFER_SIZE, card) == BUFFER_SIZE)
+    while (fread(buffer, BUFFER_SIZE, 1, card) == BUFFER_SIZE)
 
     {
 
@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
         if(img != NULL)
 
         {
-            fwrite(buffer, 1, BUFFER_SIZE, img);
+            fwrite(buffer, BUFFER_SIZE, 1, img);
         }
 
     }
