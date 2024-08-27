@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+#include <cs50.h>
 #define BUFFER_SIZE 512
 #define FILENAME_SIZE 8
 
@@ -21,7 +22,7 @@ int main(int argc, char *argv[])
     //create a buffer for a block of data
 
     uint8_t buffer[BUFFER_SIZE];
-    char filename[FILENAME_SIZE];
+    string filename = NULL;
     int i = 0;
 
     FILE *img = NULL;                               //*img is a pointer that points to a file. initialised to point at nothing
@@ -38,11 +39,16 @@ int main(int argc, char *argv[])
             {
             //check that a file is already open
 
-         
+            if (img != NULL)                //check if file is already open
+
+            {
+                fclose(img);                //if file is open, close file (not sure why necessary!)
+
+            }
 
             sprintf(filename, "%03i.jpg", i);           //create a file with name xxx.jpg
-            img = fopen(filename, "w");
-            i++;
+            img = fopen(filename, "w");                 //open the file with current file name (based on i)
+            i++;                                        //increase the value of i for the next file
 
             }
 
@@ -53,7 +59,7 @@ int main(int argc, char *argv[])
         if(img != NULL)
 
         {
-            fwrite(buffer, 1, BUFFER_SIZE, img);
+            fwrite(buffer, 1, BUFFER_SIZE, img);        //if file is already open, start writing to file from buffer
         }
 
     }
