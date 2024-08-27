@@ -62,7 +62,6 @@ int main(int argc, char *argv[])
             fwrite(buffer, BUFFER_SIZE, 1, img);
         }
 
-
     }
 
     if (img != NULL)
@@ -72,6 +71,7 @@ int main(int argc, char *argv[])
     }
 
     fclose(card);
+    return 0;
 
     }
 
