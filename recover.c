@@ -3,7 +3,7 @@
 #include <stdint.h>
 #include <cs50.h>
 #define BUFFER_SIZE 512
-#define FILENAME_SIZE 4
+#define FILENAME_SIZE 8
 
 int main(int argc, char *argv[])
 {
