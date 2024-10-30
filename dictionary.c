@@ -6,8 +6,6 @@
 #include <strings.h>
 #include <stdlib.h>
 #include <string.h>
-
-
 #include "dictionary.h"
 
 // Represents a node in a hash table
@@ -33,17 +31,17 @@ bool check(const char *word)
     // TODO
 
     hash_value = hash(word);
-    node* cursor = table[hash_value];
+    node* cursor = table[hash_value];                   //use hash value to access the linked list
 
     while (cursor != 0)
 
     {
-        if(strcasecmp(word, cursor->word) == 0)
+        if(strcasecmp(word, cursor->word) == 0)         //if word is found in linked list, return true
 
         {
             return true;
         }
-        cursor = cursor->next;
+        cursor = cursor->next;                          //else move cursor to next node to compare next word in linked list
     }
 
     return false;
@@ -54,7 +52,7 @@ unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
     unsigned long total = 0;
-    for(int i = 0; i < strlen(word); i++)
+    for(int i = 0; i < strlen(word); i++)       //credit to CS50 Guide by Anvea for hash function
 
     {
         total += tolower(word[i]);
@@ -98,9 +96,9 @@ bool load(const char *dictionary)
         word_count++;                           //count the number of words
     }
 
-    fclose(file);                                //close the file
+    fclose(file);                               //close the file
 
-    return true;                               //end the function
+    return true;                                //end the function
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
@@ -121,16 +119,16 @@ bool unload(void)
 {
     // TODO
 
-    for (int i = 0; i < N; i++)
+    for (int i = 0; i < N; i++)                 //create loop to iterate through different linked lists
 
     {
-        node *cursor = table[i];
+        node *cursor = table[i];                //create cursor that will point to each node
         while (cursor)
 
         {
-            node *temp = cursor;
-            cursor = cursor->next;
-            free(temp);
+            node *temp = cursor;                //temporary node points to next node
+            cursor = cursor->next;              //cursor points to temporary node to retain memory address of linked list
+            free(temp);                         //free temp
         }
 
         if (cursor == NULL && i == N-1)
