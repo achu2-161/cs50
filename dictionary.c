@@ -92,10 +92,10 @@ bool load(const char *dictionary)
         }
 
         strcpy(n->word, word_copied);           //strcpy copies the word from 'word_copied' into the 'word' field of the struct node (n.word)
-        hash_value = hash(word_copied);     //hash_value is an int to store the return value of the hash function. This variable might need to be declared outside the function
+        hash_value = hash(word_copied);         //hash_value is an int to store the return value of the hash function. This variable might need to be declared outside the function
         n->next = table[hash_value];            //table is a struct of type node that updates the 'next' field of the struct node (n.next)
         table[hash_value] = n;
-        word_count++;                       //count the number of words
+        word_count++;                           //count the number of words
     }
 
     fclose(file);                                //close the file
