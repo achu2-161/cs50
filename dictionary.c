@@ -100,7 +100,7 @@ bool load(const char *dictionary)
 
     fclose(file);                                //close the file
 
-    return false;                               //end the function
+    return true;                               //end the function
 }
 
 // Returns number of words in dictionary if loaded, else 0 if not yet loaded
