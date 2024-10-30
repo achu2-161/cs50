@@ -133,7 +133,7 @@ bool unload(void)
             free(temp);
         }
 
-        if (cursor == NULL)
+        if (cursor == NULL && i == N-1)
 
         {
             return true;
