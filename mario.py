@@ -1,6 +1,7 @@
-height = int(input("Height: "))
+height = 0
 
-#while(height >= 1 and height <=8):
+while(height < 1 or height >8):
+    height = int(input("Height: "))
 
 for row in range(height):
     for column in range(height - row - 1):
