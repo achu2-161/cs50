@@ -1,4 +1,4 @@
-height = 0
+int height = 0
 
 while(height < 1 or height >8):
     height = int(input("Height: "))
