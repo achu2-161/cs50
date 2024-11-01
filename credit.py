@@ -36,17 +36,17 @@ lund_3 = lund_1 + lund_2
 
 print(lund_3)
 
-length = (len(str(number)))
+#length = (len(str(number)))
 
 start_13V = (number // 1000000000000)
 start_15A = (number // 10000000000000)
 start_16V = (number // 1000000000000000)
 start_16M = (number // 100000000000000)
 
-print(f"start_13V = ",{start_13V})
-print(f"start_15A = ", {start_15A})
-print(f"start_16V = ", {start_16V})
-print(f"start_16M = ", {start_16M})
+#print(f"start_13V = ",{start_13V})
+#print(f"start_15A = ", {start_15A})
+#print(f"start_16V = ", {start_16V})
+#print(f"start_16M = ", {start_16M})
 
 #check for American Express:
 
