@@ -14,9 +14,9 @@ x_11 = (number % 100000000000) // 10000000000
 x_12 = (number % 1000000000000) // 100000000000
 x_13 = (number % 10000000000000) // 1000000000000
 x_14 = (number % 100000000000000) // 10000000000000
-x_14 = (number % 1000000000000000) // 100000000000000
-x_15 = (number % 10000000000000000) // 1000000000000000
-x_16 = (number % 100000000000000000) // 10000000000000000
+x_15 = (number % 1000000000000000) // 100000000000000
+x_16 = (number % 10000000000000000) // 1000000000000000
+
 
 y_2 = x_2 * 2
 y_4 = x_4 * 2
@@ -44,7 +44,7 @@ if((lund_3 % 10 == 0) and ((start_15 == 34) or (start_15 == 37)) and length == 1
     print("AMEX")
 
 #check for VISA
-elif((lund_3 % 10 == 0) and ((start_13 == 4) or (start_16V == 4)) and (length == 13 or lenth == 16)):
+elif((lund_3 % 10 == 0) and ((start_13 == 4) or (start_16V == 4)) and (length == 13 or legnth == 16)):
     print("VISA")
 
 #check for MasterCard
