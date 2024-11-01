@@ -34,9 +34,9 @@ lund_2 = ((y_2 // 10) + (y_2 % 10) + (y_4 // 10) + (y_4 % 10) +
           (y_14 // 10) + (y_14 % 10) + (y_16 // 10) + (y_16 % 10))
 lund_3 = lund_1 + lund_2
 
-print(lund_3)
+#print(lund_3)
 
-#length = (len(str(number)))
+length = (len(str(number)))
 
 start_13V = (number // 1000000000000)
 start_15A = (number // 10000000000000)
