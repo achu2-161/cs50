@@ -44,12 +44,12 @@ if((lund_3 % 10 == 0) and ((start_15 == 34) or (start_15 == 37)) and length == 1
     print("AMEX")
 
 #check for VISA
-elif((lund_3 % 10 == 0) and ((start_13 == 4) or (start_16V == 4)) and (length == 13 or legnth == 16)):
-    print("VISA")
+    elif((lund_3 % 10 == 0) and ((start_13 == 4) or (start_16V == 4)) and (length == 13 or legnth == 16)):
+        print("VISA")
 
 #check for MasterCard
-elif((lund_3 % 10 == 0) and ((start_16M == 51) or (start_16M == 52) or (start_16M == 53) or (start_16M == 54) or (start_16M == 55)) and length == 16):
-    print("Mastercard")
+    elif((lund_3 % 10 == 0) and ((start_16M == 51) or (start_16M == 52) or (start_16M == 53) or (start_16M == 54) or (start_16M == 55)) and length == 16):
+        print("Mastercard")
 
-else:
-    print("Invalid")
+        else:
+        print("Invalid")
