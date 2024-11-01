@@ -59,7 +59,7 @@ elif((lund_3 % 10 == 0) and ((start_13V == 4) or (start_16V == 4)) and (length =
 
 #check for MasterCard
 elif((lund_3 % 10 == 0) and ((start_16M == 51) or (start_16M == 52) or (start_16M == 53) or (start_16M == 54) or (start_16M == 55)) and length == 16):
-    print("Mastercard")
+    print("MASTERCARD")
 
 else:
-    print("Invalid")
+    print("INVALID")
