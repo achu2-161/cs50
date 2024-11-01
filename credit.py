@@ -34,20 +34,27 @@ lund_2 = ((y_2 // 10) + (y_2 % 10) + (y_4 // 10) + (y_4 % 10) +
           (y_14 // 10) + (y_14 % 10) + (y_16 // 10) + (y_16 % 10))
 lund_3 = lund_1 + lund_2
 
+print(lund_3)
+
 length = (len(str(number)))
 
-start_13 = (number // 1000000000000)
-start_15 = (number // 10000000000000)
+start_13V = (number // 1000000000000)
+start_15A = (number // 10000000000000)
 start_16V = (number // 1000000000000000)
-start_16M = (number // 10000000000000000)
+start_16M = (number // 100000000000000)
+
+print(f"start_13V = ",{start_13V})
+print(f"start_15A = ", {start_15A})
+print(f"start_16V = ", {start_16V})
+print(f"start_16M = ", {start_16M})
 
 #check for American Express:
 
-if((lund_3 % 10 == 0) and ((start_15 == 34) or (start_15 == 37)) and length == 15):
+if((lund_3 % 10 == 0) and ((start_15A == 34) or (start_15A == 37)) and length == 15):
     print("AMEX")
 
 #check for VISA
-elif((lund_3 % 10 == 0) and ((start_13 == 4) or (start_16V == 4)) and (length == 13 or legnth == 16)):
+elif((lund_3 % 10 == 0) and ((start_13V == 4) or (start_16V == 4)) and (length == 13 or length == 16)):
     print("VISA")
 
 #check for MasterCard
