@@ -73,7 +73,7 @@ def main():
     dna_values = [str(y) for y in dna_values]
 
 
-    for n in range(db_length):
+    for n in range(k):
 
         db_value = list(db_dict[n].values())
         db_name = db_value[0]
